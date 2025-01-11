@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Updates</title>
+  <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+  <style>
+   body {
+    margin: 0;
+    background-color: #181818;
+    font-family: 'Itim', cursive;
+    transition: background 0.3s;
+    margin-bottom: 120px;
+   }
+
+   h1 {
+    font-size: 3em;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+    color: white;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 0px 0px 15px black;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+   }
+
+   a {
+    color: white;
+    margin: 0px;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 0px 0px 15px black;
+    text-decoration: none;
+   }
+
+   a:hover {
+    color: red;
+    cursor: pointer;
+    text-decoration: none;
+   }
+
+   .theme-button {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001;
+    font-size: 1em;
+   }
+
+   .theme-button:hover {
+    background-color: #555;
+   }
+
+   .drive-logo {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    z-index: 1001;
+   }
+
+   .drive-logo img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+   }
+
+   .updates {
+    text-align: center;
+    color: white;
+    margin-top: 90px;
+   }
+
+   .updates h2 {
+    font-size: 2.5em;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 0px 0px 15px black;
+   }
+
+   .updates p {
+    -webkit-text-stroke: 2px black;
+    text-shadow: 0px 0px 15px black;
+    font-size: 1.6em;
+    font-weight: bold;
+    line-height: 0.2;
+    color: white;
+    margin-top: 20px;
+   }
+
+   .line {
+    width: 50%;
+    margin: 20px auto;
+    border-top: 1px solid white;
+   }
+
+   .message-devs-container {
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    bottom: 0;
+   }
+
+   .message-devs-container h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+   }
+
+   .username-input,
+   .message-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+   }
+
+   .send-button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+   }
+
+   .send-button:hover {
+    background-color: #555;
+   }
+
+   div.myInvisibleDiv {
+    overflow: hidden;
+    visibility: hidden;
+    height: 250px width: 95%;
+   }
+
+   summary: {
+    display: none
+   }
+
+   summary:after {
+    content: "►";
+    color: #fff;
+    float: center;
+   }
+
+   summary::marker {
+    content: none;
+   }
+
+   details[open] summary:after {
+    content: "▼";
+   }
+  </style>
+ </head>
+ <body>
+  <a class="drive-logo" href="https://drive.google.com/drive/folders/1BFIpg2AxZ3wc4hHGfftoDlfagUJw-K2t" target="_blank">
+   <img style="width:70px;height:40px;" src="https://logos-world.net/wp-content/uploads/2020/11/Google-Drive-Logo-700x394.png" alt="Google Drive Logo">
+  </a>
+  <button class="theme-button" onclick="toggleTheme()">Toggle Theme</button>
+  <a href="!Untitled.html" target="_self">
+   <h1>Untitled Folder</h1>
+  </a>
+  <div class="updates">
+   <h2>
+    <a style="font-size: 26px;" href="!Untitled.html">GO BACK</a>
+   </h2>
+   <h2>Update Logs</h2>
+      <details>
+    <summary>
+     <p>v1.06</p>Details:
+    </summary>
+    <li>Fixed Updates Page</li>
+    <li>Fixed Eaglercraft 1.8</li>
+    <li>Updated Broken JS</li>
+    <li>Added Requested Games</li>
+   </details>
+   <div class="line"></div>
+   <details>
+    <summary>
+     <p>v1.05</p>Details:
+    </summary>
+    <li>Added Updates Page</li>
+    <li>Added Dev Message System</li>
+    <li>Fixed ROMS Folder</li>
+    <li>Site CSS Update</li>
+    <li>Replace Discord with Drive Link</li>
+   </details>
+   <div class="line"></div>
+   <details>
+    <summary>
+     <p>v1.04</p>Details:
+    </summary>
+    </li>
+    <li>Added Hacked ROMS</li>
+    <li>Site CSS Update</li>
+   </details>
+   <div class="line"></div>
+   <details>
+    <summary>
+     <p>v1.03</p>Details:
+    </summary>
+    <li>Added SM64</li>
+    <li>Added Chrome Dino</li>
+    <li>Added Minecraft JS</li>
+    <li>Added WebArch Standalone</li>
+    <li>Discord Server is Up!</li>
+   </details>
+   <div class="line"></div>
+   <details>
+    <summary>
+     <p>v1.02</p>Details:
+    </summary>
+    <li>Added Slope</li>
+    <li>Added Tetris</li>
+    <li>Fixed FNAW</li>
+    <li>Updated Minecraft</li>
+    <li>Added New Theme</li>
+   </details>
+   <div class="line"></div>
+  </div>
+  <p>&nbsp</p>
+  <p>&nbsp</p>
+  </div>
+  <script>
+   document.addEventListener("DOMContentLoaded", function() {
+      const sillyContainer = document.getElementById("silly-container");
+      const sillyIcons = document.getElementById("silly-icons");
+      const sillyFrame = document.getElementById("silly-frame");
+      const newTabLink = document.getElementById("new-tab-link");
+      document.getElementById("silly-container").style.display = "none";
+      window.loadSilly = function(sillyPath) {
+       sillyContainer.style.display = "flex";
+       sillyIcons.style.display = "none";
+       sillyFrame.src = sillyPath;
+       newTabLink.href = sillyPath;
+      };
+      window.hideSilly = function() {
+       sillyContainer.style.display = "none";
+       sillyIcons.style.display = "flex";
+       sillyFrame.src = "";
+      };
+      document.body.style.zoom = "90%";
+
+      function itzkvrtTheme() {
+       const body = document.body;
+       if (body.style.background === "rgb(24, 24, 24)" || body.style.background === "#181818") {
+        body.style.background = "url('bg.gif') repeat";
+       } else {
+        body.style.background = "#181818";
+       }
+      }
+  </script>
+ </body>
+</html>
