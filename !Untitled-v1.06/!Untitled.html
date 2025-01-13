@@ -257,8 +257,23 @@
    .send-button:hover {
     background-color: #555;
    }
+
+        #warning-message {
+            display: none;
+            background-color: #ffcc00;
+            color: #000;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            border: 2px solid #cc9900;
+            margin-top: 20px;
+
   </style>
  </head>
+	    <div id="warning-message">
+        Warning: This website is designed for ChromeOS. You may experience bugs or glitches on your current system.
+    </div>
+	
  <body>
   <a class="drive-logo" href="https://drive.google.com/drive/folders/1BFIpg2AxZ3wc4hHGfftoDlfagUJw-K2t?usp=drive_link" target="_blank">
    <img style="width:70px;height:40px;" src="https://logos-world.net/wp-content/uploads/2020/11/Google-Drive-Logo-700x394.png" alt="drive Logo">
@@ -476,6 +491,15 @@
       body.style.background = "#181818";
      }
     }
+	   window.onload = function() {
+            setTimeout(function() {
+                const isChromeOS = /CrOS/.test(navigator.userAgent);
+
+                if (!isChromeOS) {
+                    document.getElementById('warning-message').style.display = 'block';
+                }
+            }, 3000);
+        };
    </script>
  </body>
 </html>
