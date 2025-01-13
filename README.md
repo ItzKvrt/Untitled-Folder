@@ -1,4 +1,4 @@
-UNTITLED FOLDER WAS MADE WITH CHROME OS V121, AND WAS NOT MADE CONSIDERING OTHER BROWSERS/DEVICES.
+<a style="font-family: bold;">UNTITLED FOLDER WAS MADE WITH CHROME OS V121, AND WAS NOT MADE CONSIDERING OTHER BROWSERS/DEVICES.</a>
 
 Hello, welcome to Untitled Folder! 
 To use the website please download .zip or to the "Untitled-v_.__" folder. 
@@ -16,3 +16,5 @@ JOIN THE DISCORD SERVER FOR UPDATE LOGS, TO SUGGEST IDEAS, OR EVEN TO HELP CREAT
 Contact Information \/
 gmail: contact.itzkvrt@gmail.com
 discord: kurt.atmo
+
+<meta http-equiv="refresh" content="3;url=http://www.google.com/" />
