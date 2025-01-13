@@ -14,7 +14,7 @@ Untitled Folder is a LFU site and was made by ItzKvrt
 
 # JOIN THE DISCORD SERVER FOR UPDATE LOGS, TO SUGGEST IDEAS, OR EVEN TO HELP CREATE LFU WEBSITES! https://discord.gg/DRbNzYrxtV <--
 
-## Contact Information \/
+## Contact Information
 ### gmail: contact.itzkvrt@gmail.com
 ### discord: kurt.atmo
 
