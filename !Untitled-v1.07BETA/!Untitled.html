@@ -489,7 +489,7 @@
         const currentColor = window.getComputedStyle(element).color;
         if (currentColor === 'rgb(255, 255, 255)' || currentColor === 'white') {
             element.style.color = 'red';
-            element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
+            element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)'; // Black shadow
         } else {
             element.style.color = 'white';
             element.style.textShadow = 'none';
@@ -501,21 +501,20 @@
         kurtElement.style.transition = 'color 0.3s ease, text-shadow 0.3s ease';
         kurtElement.onmouseover = () => {
             kurtElement.style.color = 'red';
-            kurtElement.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
+            kurtElement.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)'; // Black shadow
         };
         kurtElement.onmouseout = () => {
-            // Check if the theme is active, if so, keep it red after hovering
             const currentColor = window.getComputedStyle(kurtElement).color;
             if (currentColor === 'rgb(255, 255, 255)' || currentColor === 'white') {
                 kurtElement.style.color = 'red';
-                kurtElement.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
+                kurtElement.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)'; // Black shadow
             }
         };
     });
 
     const sillyImages = document.querySelectorAll('.silly-image');
     sillyImages.forEach((image) => {
-        image.style.transition = 'outline 0.3s ease';
+        image.style.transition = 'outline 0.3s ease, transform 0.3s ease';
         image.onmouseover = () => {
             image.style.outline = '3px solid red';
         };
@@ -524,7 +523,6 @@
         };
     });
 }
-
 
 				window.onload = function() {
 					setTimeout(function() {
