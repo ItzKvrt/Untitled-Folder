@@ -347,6 +347,8 @@
      <button type="submit" class="send-button">Send</button>
     </div>
    </form>
+	  <button id="refresh-button">Refresh</button>
+
    <script>
     async function fetchDevData() {
      try {
@@ -504,6 +506,31 @@
                 }
             }, 3000);
         };
+
+    if (localStorage.getItem('visited')) {
+        showWarningMessage();
+    } else {
+        localStorage.setItem('visited', 'true');
+    }
+
+    function showWarningMessage() {
+        const warningMessage = document.getElementById('warning-message');
+        if (warningMessage) {
+            const userAgent = navigator.userAgent;
+            if (!userAgent.includes('CrOS')) {
+                warningMessage.style.display = 'block';
+            }
+        }
+    }
+
+    const refreshButton = document.createElement('button');
+    refreshButton.innerHTML = 'Refresh';
+    refreshButton.onclick = function () {
+        localStorage.removeItem('visited');
+        location.reload();
+    };
+    document.body.appendChild(refreshButton);
+	   
    </script>
  </body>
 </html>
