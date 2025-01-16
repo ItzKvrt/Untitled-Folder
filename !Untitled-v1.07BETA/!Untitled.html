@@ -483,7 +483,7 @@
 				});
 
 				function itzkvrtTheme() {
-    const allTextElements = document.querySelectorAll('h1, h2, a, p, kurt, updates, .message-devs-container h2, .send-button, .theme-button, #warning-message, .updating-text');
+    const allTextElements = document.querySelectorAll('h1, h2, a, p, updates, .message-devs-container h2, .send-button, .theme-button');
 
     allTextElements.forEach((element) => {
         const currentColor = window.getComputedStyle(element).color;
@@ -493,7 +493,22 @@
             element.style.color = 'white';
         }
     });
+
+    const kurtElements = document.querySelectorAll('kurt');
+    kurtElements.forEach((kurtElement) => {
+        kurtElement.style.transition = 'color 0.3s ease';
+        kurtElement.onmouseover = () => kurtElement.style.color = 'red';
+        kurtElement.onmouseout = () => {
+            const currentColor = window.getComputedStyle(kurtElement).color;
+            if (currentColor === 'rgb(255, 255, 255)' || currentColor === 'white') {
+                kurtElement.style.color = 'red';
+            } else {
+                kurtElement.style.color = 'white';
+            }
+        };
+    });
 }
+
 
 				window.onload = function() {
 					setTimeout(function() {
