@@ -489,25 +489,44 @@
         const currentColor = window.getComputedStyle(element).color;
         if (currentColor === 'rgb(255, 255, 255)' || currentColor === 'white') {
             element.style.color = 'red';
+            element.style.textShadow = '2px 2px 5px rgba(255, 0, 0, 0.7)';
         } else {
             element.style.color = 'white';
+            element.style.textShadow = 'none';
         }
     });
 
     const kurtElements = document.querySelectorAll('kurt');
     kurtElements.forEach((kurtElement) => {
         kurtElement.style.transition = 'color 0.3s ease';
-        kurtElement.onmouseover = () => kurtElement.style.color = 'red';
+        kurtElement.onmouseover = () => {
+            kurtElement.style.color = 'red';
+            kurtElement.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
+        };
         kurtElement.onmouseout = () => {
             const currentColor = window.getComputedStyle(kurtElement).color;
             if (currentColor === 'rgb(255, 255, 255)' || currentColor === 'white') {
                 kurtElement.style.color = 'red';
+                kurtElement.style.textShadow = '2px 2px 5px rgba(255, 0, 0, 0.7)';
             } else {
-                kurtElement.style.color = 'red';
+                kurtElement.style.color = 'white';
+                kurtElement.style.textShadow = 'none';
             }
         };
     });
+
+    const sillyImages = document.querySelectorAll('.silly-image');
+    sillyImages.forEach((image) => {
+        image.style.transition = 'outline 0.3s ease';
+        image.onmouseover = () => {
+            image.style.outline = '3px solid red';
+        };
+        image.onmouseout = () => {
+            image.style.outline = 'none';
+        };
+    });
 }
+
 
 
 				window.onload = function() {
