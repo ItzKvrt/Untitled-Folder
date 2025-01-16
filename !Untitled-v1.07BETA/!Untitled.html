@@ -487,12 +487,18 @@
 				});
 
 				function itzkvrtTheme() {
-					const body = document.body;
-					if (body.style.background === "rgb(24, 24, 24)" || body.style.background === "#181818") {
-						body.style.background = "url('bg.gif') repeat";
-					} else {
-						body.style.background = "#181818";
-					}
+    const body = document.body;
+    const allTextElements = document.querySelectorAll('h1, h2, a, p, kurt, updates, .message-devs-container h2');
+    
+    allTextElements.forEach((element) => {
+        if (element.style.color === "white" || element.style.color === "") {
+            element.style.color = "red"; // Change white text to red
+        } else {
+            element.style.color = "white"; // Restore the original color (if it's not white already)
+        }
+    });
+}
+
 				}
 				window.onload = function() {
 					setTimeout(function() {
