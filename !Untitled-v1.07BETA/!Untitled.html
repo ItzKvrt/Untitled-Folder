@@ -501,14 +501,14 @@
         kurtElement.style.transition = 'color 0.3s ease, text-shadow 0.3s ease';
         kurtElement.onmouseover = () => {
             kurtElement.style.color = 'red';
-            kurtElement.style.textShadow = '2px 2px 5px rgba(255, 0, 0, 0.7)';
+            kurtElement.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
         };
         kurtElement.onmouseout = () => {
             // Check if the theme is active, if so, keep it red after hovering
             const currentColor = window.getComputedStyle(kurtElement).color;
             if (currentColor === 'rgb(255, 255, 255)' || currentColor === 'white') {
                 kurtElement.style.color = 'red';
-                kurtElement.style.textShadow = '2px 2px 5px rgba(255, 0, 0, 0.7)';
+                kurtElement.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
             }
         };
     });
