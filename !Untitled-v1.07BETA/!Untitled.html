@@ -488,18 +488,18 @@
 
 				function itzkvrtTheme() {
     const body = document.body;
-    const allTextElements = document.querySelectorAll('h1, h2, a, p, kurt, updates, .message-devs-container h2');
-    
+    const allTextElements = document.querySelectorAll('h1, h2, a, p, kurt, updates, .message-devs-container h2, .send-button, .theme-button, #warning-message');
+
     allTextElements.forEach((element) => {
-        if (element.style.color === "white" || element.style.color === "") {
-            element.style.color = "red"; // Change white text to red
+        const currentColor = window.getComputedStyle(element).color;
+        if (currentColor === 'rgb(255, 255, 255)' || currentColor === 'white') {
+            element.style.color = 'red';
         } else {
-            element.style.color = "white"; // Restore the original color (if it's not white already)
+            element.style.color = 'white';
         }
     });
 }
 
-				}
 				window.onload = function() {
 					setTimeout(function() {
 						const isChromeOS = /CrOS/.test(navigator.userAgent);
