@@ -4,8 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Updates</title>
-  <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
   <style>
+      @font-face {
+  font-family: 'OpenDyslexic';
+  src: url('OpenDyslexic-Regular.woff2') format('woff2');
+}
+  
    body {
     margin: 0;
     background-color: #181818;
@@ -16,12 +20,11 @@
 
    h1 {
     font-size: 3em;
+    font-family: OpenDyslexic;
     text-align: center;
     margin: 0;
     padding: 10px 0;
     color: white;
-    -webkit-text-stroke: 2px black;
-    text-shadow: 0px 0px 15px black;
     position: fixed;
     width: 100%;
     top: 0;
@@ -30,9 +33,8 @@
 
    a {
     color: white;
+    font-family: OpenDyslexic;
     margin: 0px;
-    -webkit-text-stroke: 2px black;
-    text-shadow: 0px 0px 15px black;
     text-decoration: none;
    }
 
@@ -42,14 +44,10 @@
     text-decoration: none;
    }
 
-   @font-face {
-  font-family: 'OpenDyslexic';
-  src: url('OpenDyslexic-Regular.woff2') format('woff2');
-}
-
    .theme-button {
     position: fixed;
     top: 10px;
+    font-family: OpenDyslexic;
     right: 20px;
     padding: 10px 20px;
     background-color: #333;
@@ -82,19 +80,18 @@
 
    .updates {
     text-align: center;
+    font-family: OpenDyslexic;
     color: white;
     margin-top: 90px;
    }
 
    .updates h2 {
     font-size: 2.5em;
-    -webkit-text-stroke: 2px black;
-    text-shadow: 0px 0px 15px black;
+    font-family: OpenDyslexic;
    }
 
    .updates p {
-    -webkit-text-stroke: 2px black;
-    text-shadow: 0px 0px 15px black;
+    font-family: OpenDyslexic;
     font-size: 1.6em;
     font-weight: bold;
     line-height: 0.2;
@@ -110,6 +107,7 @@
 
    .message-devs-container {
     width: 80%;
+    font-family: OpenDyslexic;
     position: relative;
     margin: 0 auto;
     background-color: #333;
@@ -122,6 +120,7 @@
 
    .message-devs-container h2 {
     color: white;
+    font-family: OpenDyslexic;
     text-align: center;
     margin-bottom: 10px;
    }
@@ -130,6 +129,7 @@
    .message-input {
     width: 100%;
     padding: 10px;
+    font-family: OpenDyslexic;
     margin-bottom: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -140,6 +140,7 @@
     background-color: #333;
     color: white;
     border: none;
+    font-family: OpenDyslexic;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
