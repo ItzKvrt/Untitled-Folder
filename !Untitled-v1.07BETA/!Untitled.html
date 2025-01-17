@@ -480,37 +480,44 @@
     }
 
     let themeActive = false;
-    function itzkvrtTheme() {
-      const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button, .theme-button');
-      allTextElements.forEach((element) => {
-        const currentColor = window.getComputedStyle(element).color;
-        if (currentColor === 'rgb(255, 255, 255)' || currentColor === 'white') {
-          element.style.color = 'red';
-          element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
-        } else {
-          element.style.color = 'white';
-          element.style.textShadow = 'none';
-        }
-      });
-
-      const sillyImages = document.querySelectorAll('.silly-image');
-      sillyImages.forEach((image) => {
-        image.style.transition = 'outline 0.3s ease, transform 0.3s ease';
-        image.onmouseover = () => {
-          image.style.outline = '3px solid red';
-        };
-        image.onmouseout = () => {
-          image.style.outline = 'none';
-        };
-        if (themeActive) {
-          image.style.border = '2px solid red';
-        } else {
-          image.style.border = '2px solid #333';
-        }
-      });
-
-      themeActive = !themeActive;
+function itzkvrtTheme() {
+  const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button, .theme-button');
+  allTextElements.forEach((element) => {
+    const currentColor = window.getComputedStyle(element).color;
+    if (currentColor === 'rgb(255, 255, 255)' || currentColor === 'white') {
+      element.style.color = 'red';
+      element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
+    } else {
+      element.style.color = 'white';
+      element.style.textShadow = 'none';
     }
+  });
+
+  const sillyImages = document.querySelectorAll('.silly-image');
+  sillyImages.forEach((image) => {
+    image.style.transition = 'outline 0.3s ease, transform 0.3s ease';
+    image.onmouseover = () => {
+      image.style.outline = '3px solid red';
+    };
+    image.onmouseout = () => {
+      image.style.outline = 'none';
+    };
+    if (themeActive) {
+      image.style.border = '2px solid red';
+    } else {
+      image.style.border = '2px solid #333';
+    }
+  });
+
+  const body = document.querySelector('body');
+  if (themeActive) {
+    body.style.backgroundColor = '#111';
+  } else {
+    body.style.backgroundColor = '#fff';
+  }
+
+  themeActive = !themeActive;
+}
 
     window.onload = function () {
       setTimeout(function () {
