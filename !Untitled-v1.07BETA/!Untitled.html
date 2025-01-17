@@ -481,33 +481,28 @@
 
     let themeActive = false;
 
+let themeActive = false;
+
 function itzkvrtTheme() {
   const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button, .theme-button');
   const sillyImages = document.querySelectorAll('.silly-image');
-  const body = document.querySelector('body');
-
+  
   if (themeActive) {
     allTextElements.forEach((element) => {
       element.style.color = 'white';
-      element.style.textShadow = 'none';
     });
-
+    
     sillyImages.forEach((image) => {
       image.style.border = '2px solid #333';
     });
-
-    body.style.backgroundColor = '#181818';
   } else {
     allTextElements.forEach((element) => {
       element.style.color = 'red';
-      element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
     });
-
+    
     sillyImages.forEach((image) => {
-      image.style.border = '2px solid red';
+      image.style.border = '2px solid #FF0000';
     });
-
-    body.style.backgroundColor = '#111';
   }
 
   themeActive = !themeActive;
