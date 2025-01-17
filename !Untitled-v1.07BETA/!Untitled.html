@@ -486,7 +486,7 @@
 						errorElement.textContent = `[ERROR] ${message}`;
 						customConsole.appendChild(errorElement);
 						customConsole.scrollTop = customConsole.scrollHeight;
-					
+					}
 
 let themeActive = false;
 
@@ -532,13 +532,13 @@ function itzkvrtTheme() {
 
         // Toggle the border based on themeActive
         if (themeActive) {
-            image.style.border = '2px solid red';  // Set border to red when theme is active
+            image.style.border = '2px solid red'; 
         } else {
-            image.style.border = '2px solid #333';  // Set border to #333 when theme is not active
+            image.style.border = '2px solid #333'; 
         }
     });
 
-    themeActive = !themeActive;  // Toggle the theme state
+    themeActive = !themeActive; 
 }
 
 				window.onload = function() {
