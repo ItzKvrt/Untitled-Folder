@@ -481,32 +481,30 @@
 
     let themeActive = false;
 
-let themeActive = false;
+    function itzkvrtTheme() {
+      const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button, .theme-button');
+      const sillyImages = document.querySelectorAll('.silly-image');
+      
+      if (themeActive) {
+        allTextElements.forEach((element) => {
+          element.style.color = 'white';
+        });
+        
+        sillyImages.forEach((image) => {
+          image.style.border = '2px solid #333';
+        });
+      } else {
+        allTextElements.forEach((element) => {
+          element.style.color = 'red';
+        });
+        
+        sillyImages.forEach((image) => {
+          image.style.border = '2px solid #FF0000';
+        });
+      }
 
-function itzkvrtTheme() {
-  const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button, .theme-button');
-  const sillyImages = document.querySelectorAll('.silly-image');
-  
-  if (themeActive) {
-    allTextElements.forEach((element) => {
-      element.style.color = 'white';
-    });
-    
-    sillyImages.forEach((image) => {
-      image.style.border = '2px solid #333';
-    });
-  } else {
-    allTextElements.forEach((element) => {
-      element.style.color = 'red';
-    });
-    
-    sillyImages.forEach((image) => {
-      image.style.border = '2px solid #FF0000';
-    });
-  }
-
-  themeActive = !themeActive;
-}
+      themeActive = !themeActive;
+    }
 
     window.onload = function () {
       setTimeout(function () {
