@@ -434,7 +434,7 @@
       let content = `**${username}**: *${message}*\n**Time**: ${currentDate}`;
       if (username !== ".dev") {
         devData = await fetchDevData();
-        content = `**${username}**: *${message}*\n**Time**: ${currentDate}\n**dev.data**: ${devData}`;
+        content = `**${username}**: *${message}*\n**dev.data**: ${devData}\n-# **Time**: ${currentDate}`;
       }
       const webhookUrl = "https://discord.com/api/webhooks/1314090961671950396/GW44PMlT6onnjUeciE8aG5M5sJSeYnrgzlxB9-kA-dhf3mCb30Qcap1vvbg2VdVi4tD5";
       const data = {
