@@ -284,7 +284,7 @@
     <a class="drive-logo" href="https://drive.google.com/drive/folders/1BFIpg2AxZ3wc4hHGfftoDlfagUJw-K2t?usp=drive_link" target="_blank">
       <img style="width:70px;height:40px;" src="https://logos-world.net/wp-content/uploads/2020/11/Google-Drive-Logo-700x394.png" alt="drive Logo">
     </a>
-    <button class="theme-button" onclick="itzkvrtTheme()">Toggle Theme</button>
+<button class="theme-button" id="theme-button">Toggle Theme</button>
     <a href="./" target="_self">
       <h1>Untitled Folder</h1>
     </a>
@@ -481,53 +481,49 @@
 
     let themeActive = false;
 
-    function itzkvrtTheme() {
-      const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button, .theme-button');
-      const sillyImages = document.querySelectorAll('.silly-image');
-      const body = document.body;
-      const pageBorders = document.querySelectorAll("h1, h2, .message-devs-container, .theme-button, .send-button");
+function itzkvrtTheme() {
+  const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button, .theme-button');
+  const sillyImages = document.querySelectorAll('.silly-image');
+  const body = document.body;
+  const pageBorders = document.querySelectorAll("h1, h2, .message-devs-container, .theme-button, .send-button");
 
-      if (themeActive) {
-        allTextElements.forEach((element) => {
-          element.style.color = 'white';
-        });
+  if (themeActive) {
+    allTextElements.forEach((element) => {
+      element.style.color = 'white';
+    });
 
-        sillyImages.forEach((image) => {
-          image.style.border = '2px solid #333';
-        });
+    sillyImages.forEach((image) => {
+      image.style.border = '2px solid #333';
+    });
 
-        pageBorders.forEach((element) => {
-          element.style.border = 'none';
-        });
+    pageBorders.forEach((element) => {
+      element.style.border = 'none';
+    });
 
-        body.style.border = 'none';
-      } else {
-        allTextElements.forEach((element) => {
-          element.style.color = 'red';
-        });
+    body.style.border = 'none';
+  } else {
+    allTextElements.forEach((element) => {
+      element.style.color = 'red';
+    });
 
-        sillyImages.forEach((image) => {
-          image.style.border = '2px solid red';
-        });
+    sillyImages.forEach((image) => {
+      image.style.border = '2px solid red';
+    });
 
-        pageBorders.forEach((element) => {
-          element.style.border = '2px solid red';
-        });
+    pageBorders.forEach((element) => {
+      element.style.border = '2px solid red';
+    });
 
-        body.style.border = '2px solid red';
-      }
+    body.style.border = '2px solid red';
+  }
 
-      themeActive = !themeActive;
-    }
+  themeActive = !themeActive;
+}
 
-    window.onload = function () {
-      setTimeout(function () {
-        if (navigator.userAgent.includes("ChromeOS")) {
-          document.body.classList.add("chrome-os");
-        }
-      }, 500);
-    }
-  });
+document.addEventListener("DOMContentLoaded", function () {
+  const themeButton = document.getElementById('theme-button');
+  themeButton.addEventListener('click', itzkvrtTheme);
+});
 </script>
   </body>
 </html>
