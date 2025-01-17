@@ -486,8 +486,7 @@
 						errorElement.textContent = `[ERROR] ${message}`;
 						customConsole.appendChild(errorElement);
 						customConsole.scrollTop = customConsole.scrollHeight;
-					}
-				});
+					let themeActive = false;
 
 function itzkvrtTheme() {
     const allTextElements = document.querySelectorAll('h1, h2, a, p, updates, .message-devs-container h2, .send-button, .theme-button');
@@ -528,9 +527,18 @@ function itzkvrtTheme() {
         image.onmouseout = () => {
             image.style.outline = 'none';
         };
-        image.style.border = '2px solid red';  // Change border color to red
+
+        if (themeActive) {
+            image.style.border = '2px solid red';  // Set border to red when theme is active
+        } else {
+            image.style.border = '2px solid #333';  // Set border to #333 when theme is not active
+        }
     });
+
+    themeActive = !themeActive;  // Toggle the theme state
 }
+
+
 
 
 				window.onload = function() {
