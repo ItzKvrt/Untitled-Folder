@@ -488,6 +488,8 @@
 						customConsole.scrollTop = customConsole.scrollHeight;
 					
 
+let themeActive = false;
+
 function itzkvrtTheme() {
     const allTextElements = document.querySelectorAll('h1, h2, a, p, updates, .message-devs-container h2, .send-button, .theme-button');
 
@@ -528,16 +530,16 @@ function itzkvrtTheme() {
             image.style.outline = 'none';
         };
 
+        // Toggle the border based on themeActive
         if (themeActive) {
-            image.style.border = '2px solid red';
+            image.style.border = '2px solid red';  // Set border to red when theme is active
         } else {
-            image.style.border = '2px solid #333'; 
+            image.style.border = '2px solid #333';  // Set border to #333 when theme is not active
         }
     });
+
+    themeActive = !themeActive;  // Toggle the theme state
 }
-
-
-
 
 				window.onload = function() {
 					setTimeout(function() {
