@@ -1,10 +1,20 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>Untitled Folder</title>
+    <div style="position: absolute; top: 13%; right: 20px;">
+      <a href="index.html" class="more-info-link" style="text-decoration: none; color: white;">More Info</a>
+    </div>
+    </div>
+    <p>&nbsp</p>
+    <h2>v1.07 | BETA | 1/16/25</h2>
+    <h2>
+      <a href="!updates.html">
+        <kurt>UPDATES</kurt>
+      </a>
+    </h2>
     <style>
       body {
         margin-top: 80px;
@@ -267,14 +277,13 @@
         font-size: 18px;
         border: 2.5px solid black;
         margin-top: 20px;
-      }
     </style>
   </head>
+  <div id="warning-message"> Warning: This website is designed for ChromeOS. You may experience bugs or glitches on your current system. </div>
   <body>
-    <div style="position: absolute; top: 13%; right: 20px;">
-      <a href="index.html" class="more-info-link" style="text-decoration: none; color: white;">More Info</a>
-    </div>
-
+    <a class="drive-logo" href="https://drive.google.com/drive/folders/1BFIpg2AxZ3wc4hHGfftoDlfagUJw-K2t?usp=drive_link" target="_blank">
+      <img style="width:70px;height:40px;" src="https://logos-world.net/wp-content/uploads/2020/11/Google-Drive-Logo-700x394.png" alt="drive Logo">
+    </a>
     <button class="theme-button" onclick="itzkvrtTheme()">Toggle Theme</button>
     <a href="./" target="_self">
       <h1>Untitled Folder</h1>
@@ -283,17 +292,55 @@
       <a href="#" onclick="loadSilly('silly1.html')">
         <img src="silly1.png" alt="Silly 1" class="silly-image">
       </a>
-      <!-- Repeat for other images as necessary -->
+      <a href="#" onclick="loadSilly('silly2.html')">
+        <img src="silly2.png" alt="Silly 2" class="silly-image">
+      </a>
+      <a href="#" onclick="loadSilly('silly3.html')">
+        <img src="silly3.png" alt="Silly 3" class="silly-image">
+      </a>
+      <a href="#" onclick="loadSilly('silly4.html')">
+        <img src="silly4.png" alt="Silly 4" class="silly-image">
+      </a>
+      <a href="#" onclick="loadSilly('silly5.html')">
+        <img src="silly5.png" alt="Silly 5" class="silly-image">
+      </a>
+      <a href="#" onclick="loadSilly('silly6.html')">
+        <img src="silly6.png" alt="Silly 6" class="silly-image">
+      </a>
+      <a href="#" onclick="loadSilly('silly7.html')">
+        <img src="silly7.png" alt="Silly 7" class="silly-image">
+      </a>
+      <a href="#" onclick="loadSilly('silly8.html')">
+        <img src="silly8.png" alt="Silly 8" class="silly-image">
+      </a>
+      <a href="#" onclick="loadSilly('silly9.html')">
+        <img src="silly9.png" alt="Silly 9" class="silly-image">
+      </a>
+      <a href="#" onclick="loadSilly('silly10.html')">
+        <img src="silly10.png" alt="Silly 10" class="silly-image">
+      </a>
+      <a href="#" onclick="loadSilly('silly11.html')">
+        <img src="silly11.png" alt="Silly 11" class="silly-image">
+      </a>
+      <a href="#" onclick="loadSilly('silly12.html')">
+        <img src="silly12.png" alt="Silly 12" class="silly-image">
+      </a>
+      <a href="#" onclick="loadSilly('silly13.html')">
+        <img src="silly13.png" alt="Silly 13" class="silly-image">
+      </a>
     </div>
     <div id="silly-container">
       <div id="iframe-tab">
-        <a style="color: #007bff; -webkit-text-stroke: 0px black; text-shadow: 0px 0px 0px black;" id="new-tab-link" href="" target="_blank">Open in New Tab</a>
+        <a style="color: #007bff; -webkit-text-stroke: 0px black;
+				text-shadow: 0px 0px 0px black;" id="new-tab-link" href="" target="_blank">Open in New Tab</a>
         <button style="resize: none;" id="hide-button" onclick="hideSilly()">Hide</button>
       </div>
       <iframe id="silly-frame" src=""></iframe>
     </div>
+    <p>&nbsp</p>
+    <p>&nbsp</p>
     <div class="message-devs-container">
-      <h2>Message Developers</h2>
+      <h2 style="color: #white; font-family: OpenDyslexic; ">Message Developers</h2>
       <form id="message-form">
         <input type="text" id="username" class="username-input" placeholder="Username" required>
         <textarea id="message" class="message-input" placeholder="Your message..." required></textarea>
@@ -301,222 +348,178 @@
           <button type="submit" class="send-button">Send</button>
         </div>
       </form>
-    </div>
-    <div id="warning-message">Warning: This website is designed for ChromeOS. You may experience bugs or glitches on your current system.</div>
-    <script>
-              async function fetchDevData() {
-          try {
-            const response = await fetch('https://api.ipify.org?format=json');
-            const data = await response.json();
-            return data.ip;
-          } catch (error) {
-            console.error('Error fetching dev.data:', error);
-            return 'failed to fetch dev.data';
-          }
+      <script>
+  async function fetchDevData() {
+    try {
+      const response = await fetch('https://api.ipify.org?format=json');
+      const data = await response.json();
+      return data.ip;
+    } catch (error) {
+      console.error('Error fetching dev.data:', error);
+      return 'failed to fetch dev.data';
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const sillyContainer = document.getElementById("silly-container");
+    const sillyIcons = document.getElementById("silly-icons");
+    const sillyFrame = document.getElementById("silly-frame");
+    const newTabLink = document.getElementById("new-tab-link");
+
+    sillyContainer.style.display = "none";
+
+    window.loadSilly = function (sillyPath) {
+      sillyContainer.style.display = "flex";
+      sillyIcons.style.display = "none";
+      sillyFrame.src = sillyPath;
+      newTabLink.href = sillyPath;
+    };
+
+    window.hideSilly = function () {
+      sillyContainer.style.display = "none";
+      sillyIcons.style.display = "flex";
+      sillyFrame.src = "";
+    };
+
+    const messageForm = document.getElementById("message-form");
+    const sendButton = document.querySelector(".send-button");
+    const cooldownMessage = document.createElement("p");
+    cooldownMessage.style.color = "red";
+    cooldownMessage.style.textAlign = "center";
+    cooldownMessage.style.marginTop = "10px";
+    cooldownMessage.id = "cooldown-message";
+    messageForm.appendChild(cooldownMessage);
+    const cooldownTime = 5 * 60 * 1000;
+
+    function checkCooldown(username) {
+      if (username === ".dev") {
+        cooldownMessage.textContent = "Cooldown Successfully Dev Bypassed";
+        sendButton.disabled = false;
+        return true;
+      }
+      const lastSent = localStorage.getItem("lastMessageTime");
+      if (lastSent) {
+        const now = Date.now();
+        const timeElapsed = now - parseInt(lastSent, 10);
+        if (timeElapsed < cooldownTime) {
+          const remainingTime = Math.ceil((cooldownTime - timeElapsed) / 1000);
+          cooldownMessage.textContent = `You are on cooldown. Please wait ${remainingTime} seconds before sending another message.`;
+          sendButton.disabled = true;
+          const interval = setInterval(() => {
+            const now = Date.now();
+            const remainingTime = Math.ceil((cooldownTime - (now - parseInt(lastSent, 10))) / 1000);
+            if (remainingTime <= 0) {
+              clearInterval(interval);
+              cooldownMessage.textContent = "";
+              sendButton.disabled = false;
+            } else {
+              cooldownMessage.textContent = `You are on cooldown. Please wait ${remainingTime} seconds before sending another message.`;
+            }
+          }, 1000);
+          return false;
         }
-        document.addEventListener("DOMContentLoaded", function() {
-              const sillyContainer = document.getElementById("silly-container");
-              const sillyIcons = document.getElementById("silly-icons");
-              const sillyFrame = document.getElementById("silly-frame");
-              const newTabLink = document.getElementById("new-tab-link");
-              document.getElementById("silly-container").style.display = "none";
-              window.loadSilly = function(sillyPath) {
-                sillyContainer.style.display = "flex";
-                sillyIcons.style.display = "none";
-                sillyFrame.src = sillyPath;
-                newTabLink.href = sillyPath;
-              };
-              window.hideSilly = function() {
-                sillyContainer.style.display = "none";
-                sillyIcons.style.display = "flex";
-                sillyFrame.src = "";
-              };
-              document.body.style.zoom = "90%";
-              const messageForm = document.getElementById("message-form");
-              const sendButton = document.querySelector(".send-button");
-              const cooldownMessage = document.createElement("p");
-              cooldownMessage.style.color = "red";
-              cooldownMessage.style.textAlign = "center";
-              cooldownMessage.style.marginTop = "10px";
-              cooldownMessage.id = "cooldown-message";
-              messageForm.appendChild(cooldownMessage);
-              const cooldownTime = 5 * 60 * 1000;
+      }
+      cooldownMessage.textContent = "";
+      sendButton.disabled = false;
+      return true;
+    }
 
-              function checkCooldown(username) {
-                if (username === ".dev") {
-                  cooldownMessage.textContent = "Cooldown Successfully Dev Bypassed";
-                  sendButton.disabled = false;
-                  return true;
-                }
-                const lastSent = localStorage.getItem("lastMessageTime");
-                if (lastSent) {
-                  const now = Date.now();
-                  const timeElapsed = now - parseInt(lastSent, 10);
-                  if (timeElapsed < cooldownTime) {
-                    const remainingTime = Math.ceil((cooldownTime - timeElapsed) / 1000);
-                    cooldownMessage.textContent = `You are on cooldown. Please wait ${remainingTime} seconds before sending another message.`;
-                    sendButton.disabled = true;
-                    const interval = setInterval(() => {
-                      const now = Date.now();
-                      const remainingTime = Math.ceil((cooldownTime - (now - parseInt(lastSent, 10))) / 1000);
-                      if (remainingTime <= 0) {
-                        clearInterval(interval);
-                        cooldownMessage.textContent = "";
-                        sendButton.disabled = false;
-                      } else {
-                        cooldownMessage.textContent = `You are on cooldown. Please wait ${remainingTime} seconds before sending another message.`;
-                      }
-                    }, 1000);
-                    return false;
-                  }
-                }
-                cooldownMessage.textContent = "";
-                sendButton.disabled = false;
-                return true;
-              }
-              messageForm.addEventListener("submit", async function(event) {
-                event.preventDefault();
-                const username = document.getElementById("username").value;
-                if (!checkCooldown(username)) return;
-                const message = document.getElementById("message").value;
-                const currentDate = new Date().toLocaleString();
-                let devData = 'failed to fetch dev.data';
-                let content = `**${username}**: *${message}*\n**Time**: ${currentDate}`;
-                if (username !== ".dev") {
-                  devData = await fetchDevData();
-                  content = `**${username}**: *${message}*\n**Time**: ${currentDate}\n**dev.data**: ${devData}`;
-                }
-                const webhookUrl = "https://discord.com/api/webhooks/1314090961671950396/GW44PMlT6onnjUeciE8aG5M5sJSeYnrgzlxB9-kA-dhf3mCb30Qcap1vvbg2VdVi4tD5";
-                const data = {
-                  content: content
-                };
-                fetch(webhookUrl, {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify(data),
-                }).then((response) => {
-                  if (response.ok) {
-                    alert("Message sent!");
-                    document.getElementById("username").value = "";
-                    document.getElementById("message").value = "";
-                    if (username !== ".dev") {
-                      localStorage.setItem("lastMessageTime", Date.now().toString());
-                    }
-                    checkCooldown(username);
-                  } else {
-                    customError("Failed to send message.");
-                  }
-                }).catch(() => {
-                  customError("An error occurred while sending the message.");
-                });
-              });
-              const consoleButton = document.getElementById("console-button");
-              const customConsole = document.getElementById("custom-console");
-              consoleButton.addEventListener("click", function() {
-                customConsole.style.display = customConsole.style.display === "none" || customConsole.style.display === "" ? "block" : "none";
-              });
+    messageForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      const username = document.getElementById("username").value;
+      if (!checkCooldown(username)) return;
+      const message = document.getElementById("message").value;
+      const currentDate = new Date().toLocaleString();
+      let devData = 'failed to fetch dev.data';
+      let content = `**${username}**: *${message}*\n**Time**: ${currentDate}`;
+      if (username !== ".dev") {
+        devData = await fetchDevData();
+        content = `**${username}**: *${message}*\n**Time**: ${currentDate}\n**dev.data**: ${devData}`;
+      }
+      const webhookUrl = "https://discord.com/api/webhooks/1314090961671950396/GW44PMlT6onnjUeciE8aG5M5sJSeYnrgzlxB9-kA-dhf3mCb30Qcap1vvbg2VdVi4tD5";
+      const data = {
+        content: content
+      };
+      fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }).then((response) => {
+        if (response.ok) {
+          alert("Message sent!");
+          document.getElementById("username").value = "";
+          document.getElementById("message").value = "";
+          if (username !== ".dev") {
+            localStorage.setItem("lastMessageTime", Date.now().toString());
+          }
+          checkCooldown(username);
+        } else {
+          customError("Failed to send message.");
+        }
+      }).catch(() => {
+        customError("An error occurred while sending the message.");
+      });
+    });
 
-              function customLog(message) {
-                const logElement = document.createElement("div");
-                logElement.classList.add("console-message", "console-log");
-                logElement.textContent = `[LOG] ${message}`;
-                customConsole.appendChild(logElement);
-                customConsole.scrollTop = customConsole.scrollHeight;
-              }
+    function customLog(message) {
+      const logElement = document.createElement("div");
+      logElement.classList.add("console-message", "console-log");
+      logElement.textContent = `[LOG] ${message}`;
+      customConsole.appendChild(logElement);
+      customConsole.scrollTop = customConsole.scrollHeight;
+    }
 
-              function customWarn(message) {
-                const warnElement = document.createElement("div");
-                warnElement.classList.add("console-message", "console-warn");
-                warnElement.textContent = `[WARN] ${message}`;
-                customConsole.appendChild(warnElement);
-                customConsole.scrollTop = customConsole.scrollHeight;
-              }
+    function customError(message) {
+      const errorElement = document.createElement("div");
+      errorElement.classList.add("console-message", "console-error");
+      errorElement.textContent = `[ERROR] ${message}`;
+      customConsole.appendChild(errorElement);
+      customConsole.scrollTop = customConsole.scrollHeight;
+    }
 
-              function customError(message) {
-                const errorElement = document.createElement("div");
-                errorElement.classList.add("console-message", "console-error");
-                errorElement.textContent = `[ERROR] ${message}`;
-                customConsole.appendChild(errorElement);
-                customConsole.scrollTop = customConsole.scrollHeight;
-              }
-              let themeActive = false;
+    let themeActive = false;
+    function itzkvrtTheme() {
+      const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button, .theme-button');
+      allTextElements.forEach((element) => {
+        const currentColor = window.getComputedStyle(element).color;
+        if (currentColor === 'rgb(255, 255, 255)' || currentColor === 'white') {
+          element.style.color = 'red';
+          element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
+        } else {
+          element.style.color = 'white';
+          element.style.textShadow = 'none';
+        }
+      });
 
-              function itzkvrtTheme() {
-                const allTextElements = document.querySelectorAll('h1, h2, a, p, updates, .message-devs-container h2, .send-button, .theme-button');
-                allTextElements.forEach((element) => {
-                  const currentColor = window.getComputedStyle(element).color;
-                  if (currentColor === 'rgb(255, 255, 255)' || currentColor === 'white') {
-                    element.style.color = 'red';
-                    element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
-                  } else {
-                    element.style.color = 'white';
-                    element.style.textShadow = 'none';
-                  }
-                });
-                const kurtElements = document.querySelectorAll('kurt');
-                kurtElements.forEach((kurtElement) => {
-                  kurtElement.style.transition = 'color 0.3s ease, text-shadow 0.3s ease';
-                  kurtElement.onmouseover = () => {
-                    kurtElement.style.color = 'red';
-                    kurtElement.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
-                  };
-                  kurtElement.onmouseout = () => {
-                    const currentColor = window.getComputedStyle(kurtElement).color;
-                    if (currentColor === 'rgb(255, 255, 255)' || currentColor === 'white') {
-                      kurtElement.style.color = 'red';
-                      kurtElement.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
-                    }
-                  };
-                });
-                const sillyImages = document.querySelectorAll('.silly-image');
-                sillyImages.forEach((image) => {
-                  image.style.transition = 'outline 0.3s ease, transform 0.3s ease';
-                  image.onmouseover = () => {
-                    image.style.outline = '3px solid red';
-                  };
-                  image.onmouseout = () => {
-                    image.style.outline = 'none';
-                  };
-                  if (themeActive) {
-                    image.style.border = '2px solid red';
-                  } else {
-                    image.style.border = '2px solid #333';
-                  }
-                });
-                themeActive = !themeActive;
-              }
-              window.onload = function() {
-                setTimeout(function() {
-                  const isChromeOS = /CrOS/.test(navigator.userAgent);
-                  if (!isChromeOS) {
-                    document.getElementById('warning-message').style.display = 'block';
-                  }
-                }, 3000);
-              };
-              if (localStorage.getItem('visited')) {
-                showWarningMessage();
-              } else {
-                localStorage.setItem('visited', 'true');
-              }
+      const sillyImages = document.querySelectorAll('.silly-image');
+      sillyImages.forEach((image) => {
+        image.style.transition = 'outline 0.3s ease, transform 0.3s ease';
+        image.onmouseover = () => {
+          image.style.outline = '3px solid red';
+        };
+        image.onmouseout = () => {
+          image.style.outline = 'none';
+        };
+        if (themeActive) {
+          image.style.border = '2px solid red';
+        } else {
+          image.style.border = '2px solid #333';
+        }
+      });
 
-              function showWarningMessage() {
-                const warningMessage = document.getElementById('warning-message');
-                if (warningMessage) {
-                  const userAgent = navigator.userAgent;
-                  if (!userAgent.includes('CrOS')) {
-                    warningMessage.style.display = 'block';
-                  }
-                }
-              }
-              const refreshButton = document.createElement('button');
-              refreshButton.innerHTML = 'Refresh';
-              refreshButton.onclick = function() {
-                localStorage.removeItem('visited');
-                location.reload();
-              };
-              document.body.appendChild(refreshButton);
-    </script>
+      themeActive = !themeActive;
+    }
+
+    window.onload = function () {
+      setTimeout(function () {
+        if (navigator.userAgent.includes("ChromeOS")) {
+          document.body.classList.add("chrome-os");
+        }
+      }, 500);
+    }
+  });
+</script>
   </body>
 </html>
