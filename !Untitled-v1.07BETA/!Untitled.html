@@ -489,7 +489,7 @@
 					}
 				});
 
-				function itzkvrtTheme() {
+function itzkvrtTheme() {
     const allTextElements = document.querySelectorAll('h1, h2, a, p, updates, .message-devs-container h2, .send-button, .theme-button');
 
     allTextElements.forEach((element) => {
@@ -528,14 +528,10 @@
         image.onmouseout = () => {
             image.style.outline = 'none';
         };
-
-        image.style.border = '2px solid red';
-    });
-
-    sillyImages.forEach((image) => {
-        image.style.border = '';
+        image.style.border = '2px solid red';  // Change border color to red
     });
 }
+
 
 				window.onload = function() {
 					setTimeout(function() {
