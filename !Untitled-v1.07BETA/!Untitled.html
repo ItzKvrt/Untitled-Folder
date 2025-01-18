@@ -278,10 +278,30 @@
     font-size: 18px;
     border: 2.5px solid black;
     margin-top: 20px;
+    position: relative;
+  }
+
+      #warning-message button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+
+  #warning-message button:hover {
+    background-color: #ff3333;
   }
     </style>
   </head>
-  <div id="warning-message"> Warning: This website is designed for ChromeOS. You may experience bugs or glitches on your current system. </div>
+  <div id="warning-message">
+  Warning: This website is designed for ChromeOS. You may experience bugs or glitches on your current system.
+</div>
   <body>
     <a class="drive-logo" href="https://drive.google.com/drive/folders/1BFIpg2AxZ3wc4hHGfftoDlfagUJw-K2t?usp=drive_link" target="_blank">
       <img style="width:70px;height:40px;" src="https://logos-world.net/wp-content/uploads/2020/11/Google-Drive-Logo-700x394.png" alt="drive Logo">
@@ -353,12 +373,20 @@
   
   document.addEventListener("DOMContentLoaded", function () {
     const warningMessage = document.getElementById("warning-message");
+    const closeButton = document.createElement("button");
+    closeButton.textContent = "X";
+
+    warningMessage.appendChild(closeButton);
 
     const isChromeOS = navigator.userAgent.indexOf('CrOS') !== -1;
- 
+
     if (!isChromeOS) {
       warningMessage.style.display = "block";
     }
+
+    closeButton.addEventListener("click", function () {
+      warningMessage.style.display = "none";
+    });
   });
   
   async function fetchDevData() {
