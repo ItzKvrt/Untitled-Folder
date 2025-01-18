@@ -100,6 +100,9 @@
         color: white;
         margin-top: 20px;
       }
+li {
+  color: white;
+}
 
       .line {
         width: 50%;
@@ -268,52 +271,88 @@
           const messageDevContainer = document.querySelector(".message-devs-container");
           const themeButton = document.querySelector("#theme-button");
 
-          if (!themeActive) {
-            allTextElements.forEach((element) => {
-              element.style.color = 'red';
-              element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
-            });
+function itzkvrtTheme() {
+  const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button, li');
+  const sillyImages = document.querySelectorAll('.silly-image');
+  const header = document.querySelector("h1");
+  const messageDevContainer = document.querySelector(".message-devs-container");
+  const themeButton = document.querySelector("#theme-button");
+  const newTabButton = document.querySelector("#new-tab-link");
+  const hideButton = document.querySelector("#hide-button");
+  const lines = document.querySelectorAll('.line');
 
-            sillyImages.forEach((image) => {
-              image.style.border = '2px solid red';
-            });
+  if (!themeActive) {
+    allTextElements.forEach((element) => {
+      element.style.color = 'red';
+      element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
+    });
 
-            if (header) {
-              header.style.borderBottom = '2px solid red';
-            }
+    lines.forEach((line) => {
+      line.style.borderTop = '2px solid red';
+    });
 
-            if (messageDevContainer) {
-              messageDevContainer.style.border = '2px solid red';
-            }
+    sillyImages.forEach((image) => {
+      image.style.border = '2px solid red';
+    });
 
-            if (themeButton) {
-              themeButton.style.border = '2px solid red';
-            }
-          } else {
-            allTextElements.forEach((element) => {
-              element.style.color = 'white';
-              element.style.textShadow = 'none';
-            });
+    if (header) {
+      header.style.borderBottom = '2px solid red';
+    }
 
-            sillyImages.forEach((image) => {
-              image.style.border = '2px solid rgba(67, 70, 75, 1)';
-            });
+    if (messageDevContainer) {
+      messageDevContainer.style.border = '2px solid red';
+    }
 
-            if (header) {
-              header.style.borderBottom = '2px solid rgba(67, 70, 75, 1)';
-            }
+    if (themeButton) {
+      themeButton.style.border = '2px solid red';
+    }
 
-            if (messageDevContainer) {
-              messageDevContainer.style.border = '2px solid rgba(67, 70, 75, 1)';
-            }
+    if (newTabButton) {
+      newTabButton.style.border = '2px solid red';
+    }
 
-            if (themeButton) {
-              themeButton.style.border = '2px solid rgba(67, 70, 75, 1)';
-            }
-          }
+    if (hideButton) {
+      hideButton.style.border = '2px solid red';
+    }
 
-          themeActive = !themeActive;
-        }
+  } else {
+    allTextElements.forEach((element) => {
+      element.style.color = 'white';
+      element.style.textShadow = 'none';
+    });
+
+    lines.forEach((line) => {
+      line.style.borderTop = '1px solid white';
+    });
+
+    sillyImages.forEach((image) => {
+      image.style.border = '2px solid rgba(67, 70, 75, 1)';
+    });
+
+    if (header) {
+      header.style.borderBottom = '2px solid rgba(67, 70, 75, 1)';
+    }
+
+    if (messageDevContainer) {
+      messageDevContainer.style.border = '2px solid rgba(67, 70, 75, 1)';
+    }
+
+    if (themeButton) {
+      themeButton.style.border = '2px solid rgba(67, 70, 75, 1)';
+    }
+
+    if (newTabButton) {
+      newTabButton.style.border = '2px solid rgba(67, 70, 75, 1)';
+    }
+
+    if (hideButton) {
+      hideButton.style.border = '2px solid rgba(67, 70, 75, 1)';
+    }
+  }
+
+  themeActive = !themeActive;
+}
+
 
         const themeButton = document.getElementById('theme-button');
         themeButton.addEventListener('click', itzkvrtTheme);
