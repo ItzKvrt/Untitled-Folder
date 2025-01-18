@@ -299,6 +299,7 @@
   }
     </style>
   </head>
+  <span id="toggleText" style="cursor: pointer; color: white;">Click here to toggle the favicon</span>
   <div id="warning-message">
   Warning: This website is designed for ChromeOS.<br>You may experience bugs or glitches on your current system.
 </div>
@@ -307,7 +308,6 @@
       <img style="width:70px;height:40px;" src="https://logos-world.net/wp-content/uploads/2020/11/Google-Drive-Logo-700x394.png" alt="drive Logo">
     </a>
 <button class="theme-button" id="theme-button">Toggle Theme</button>
-<button id="toggleButton">Toggle New Tab</button>
     <a href="./" target="_self">
       <h1>Untitled Folder</h1>
     </a>
@@ -371,7 +371,7 @@
         </div>
       </form>
 <script>
-    const favicon = document.getElementById('favicon') || document.createElement('link');
+        const favicon = document.getElementById('favicon') || document.createElement('link');
     if (!document.getElementById('favicon')) {
       favicon.id = 'favicon';
       document.head.appendChild(favicon);
@@ -385,9 +385,46 @@
       } else {
         favicon.href = 'favicon.ico';
       }
-      document.title = (document.title === "New Tab") ? "Untitled Folder" : "New Tab";
+      document.title = (document.title === "New Tab") ? "Original Title" : "New Tab";
     });
+  </script>
+</body>
+This version is clean and ready to be added to your existing website.
+
+
+You said:
+how can i make it so its text instead of a button
+ChatGPT said:
+ChatGPT
+To make the toggle functionality work with text instead of a button, you simply need to replace the <button> element with a text-based element, such as a <span> or <a> tag. Here's how you can do that:
+
+Updated Code (Text instead of Button):
+html
+Copy
+<body>
+  <h1>Welcome to My Site</h1>
+  <p>This is some content...</p>
   
+  <span id="toggleText" style="cursor: pointer; color: blue;">Click here to toggle the favicon</span>
+
+  <script>
+    const favicon = document.getElementById('favicon') || document.createElement('link');
+    if (!document.getElementById('favicon')) {
+      favicon.id = 'favicon';
+      document.head.appendChild(favicon);
+      favicon.rel = 'icon';
+    }
+    favicon.href = favicon.href || 'favicon.ico';
+
+    document.getElementById('toggleText').addEventListener('click', function() {
+      if (favicon.href.includes('favicon.ico')) {
+        favicon.href = 'favicon2.ico';
+      } else {
+        favicon.href = 'favicon.ico';
+      }
+      document.title = (document.title === "New Tab") ? "Original Title" : "New Tab";
+    });
+    
   document.addEventListener("DOMContentLoaded", function () {
     const warningMessage = document.getElementById("warning-message");
     const closeButton = document.createElement("button");
