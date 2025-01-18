@@ -486,6 +486,9 @@
       const sillyImages = document.querySelectorAll('.silly-image');
       const header = document.querySelector("h1");
       const messageDevContainer = document.querySelector(".message-devs-container");
+      const themeButton = document.querySelector("#theme-button");
+      const newTabButton = document.querySelector("#new-tab-button");
+      const hideButton = document.querySelector("#hide-button");
 
       if (themeActive) {
         allTextElements.forEach((element) => {
@@ -504,6 +507,19 @@
         if (messageDevContainer) {
           messageDevContainer.style.border = 'none';
         }
+
+        if (themeButton) {
+          themeButton.style.border = 'none';
+        }
+
+        if (newTabButton) {
+          newTabButton.style.border = 'none';
+        }
+
+        if (hideButton) {
+          hideButton.style.border = 'none';
+        }
+
       } else {
         allTextElements.forEach((element) => {
           element.style.color = 'red';
@@ -520,6 +536,18 @@
 
         if (messageDevContainer) {
           messageDevContainer.style.border = '2px solid red';
+        }
+
+        if (themeButton) {
+          themeButton.style.border = '2px solid red';
+        }
+
+        if (newTabButton) {
+          newTabButton.style.border = '2px solid red';
+        }
+
+        if (hideButton) {
+          hideButton.style.border = '2px solid red';
         }
       }
 
