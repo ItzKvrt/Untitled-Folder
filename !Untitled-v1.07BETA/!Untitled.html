@@ -370,8 +370,7 @@
         </div>
       </form>
 <script>
-  
-   document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function () {
     const warningMessage = document.getElementById("warning-message");
     const closeButton = document.createElement("button");
     closeButton.textContent = "X";
@@ -390,7 +389,7 @@
       warningMessage.style.display = "none";
     });
   });
-  
+
   async function fetchDevData() {
     try {
       const response = await fetch('https://api.ipify.org?format=json');
@@ -439,6 +438,7 @@
         sendButton.disabled = false;
         return true;
       }
+
       const lastSent = localStorage.getItem("lastMessageTime");
       if (lastSent) {
         const now = Date.now();
@@ -521,83 +521,83 @@
       customConsole.scrollTop = customConsole.scrollHeight;
     }
 
-let themeActive = false;
+    let themeActive = false;
 
-function itzkvrtTheme() {
-  const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button');
-  const sillyImages = document.querySelectorAll('.silly-image');
-  const header = document.querySelector("h1");
-  const messageDevContainer = document.querySelector(".message-devs-container");
-  const themeButton = document.querySelector("#theme-button");
-  const newTabButton = document.querySelector("#new-tab-link");
-  const hideButton = document.querySelector("#hide-button");
+    function itzkvrtTheme() {
+      const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button');
+      const sillyImages = document.querySelectorAll('.silly-image');
+      const header = document.querySelector("h1");
+      const messageDevContainer = document.querySelector(".message-devs-container");
+      const themeButton = document.querySelector("#theme-button");
+      const newTabButton = document.querySelector("#new-tab-link");
+      const hideButton = document.querySelector("#hide-button");
 
-  if (!themeActive) {
-    allTextElements.forEach((element) => {
-      element.style.color = 'red';
-      element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
-    });
+      if (!themeActive) {
+        allTextElements.forEach((element) => {
+          element.style.color = 'red';
+          element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
+        });
 
-    sillyImages.forEach((image) => {
-      image.style.border = '2px solid red';
-    });
+        sillyImages.forEach((image) => {
+          image.style.border = '2px solid red';
+        });
 
-    if (header) {
-      header.style.borderBottom = '2px solid red';
+        if (header) {
+          header.style.borderBottom = '2px solid red';
+        }
+
+        if (messageDevContainer) {
+          messageDevContainer.style.border = '2px solid red';
+        }
+
+        if (themeButton) {
+          themeButton.style.border = '2px solid red';
+        }
+
+        if (newTabButton) {
+          newTabButton.style.border = '2px solid red';
+        }
+
+        if (hideButton) {
+          hideButton.style.border = '2px solid red';
+        }
+
+      } else {
+        allTextElements.forEach((element) => {
+          element.style.color = 'white';
+          element.style.textShadow = 'none';
+        });
+
+        sillyImages.forEach((image) => {
+          image.style.border = '2px solid rgba(67, 70, 75, 1)'; 
+        });
+
+        if (header) {
+          header.style.borderBottom = '2px solid rgba(67, 70, 75, 1)'; 
+        }
+
+        if (messageDevContainer) {
+          messageDevContainer.style.border = '2px solid rgba(67, 70, 75, 1)'; 
+        }
+
+        if (themeButton) {
+          themeButton.style.border = '2px solid rgba(67, 70, 75, 1)';
+        }
+
+        if (newTabButton) {
+          newTabButton.style.border = '2px solid rgba(67, 70, 75, 1)'; 
+        }
+
+        if (hideButton) {
+          hideButton.style.border = '2px solid rgba(67, 70, 75, 1)';
+        }
+      }
+
+      themeActive = !themeActive;
     }
 
-    if (messageDevContainer) {
-      messageDevContainer.style.border = '2px solid red';
-    }
-
-    if (themeButton) {
-      themeButton.style.border = '2px solid red';
-    }
-
-    if (newTabButton) {
-      newTabButton.style.border = '2px solid red';
-    }
-
-    if (hideButton) {
-      hideButton.style.border = '2px solid red';
-    }
-
-  } else {
-    allTextElements.forEach((element) => {
-      element.style.color = 'white';
-      element.style.textShadow = 'none';
-    });
-
-    sillyImages.forEach((image) => {
-      image.style.border = '2px solid rgba(67, 70, 75, 1)'; 
-    });
-
-    if (header) {
-      header.style.borderBottom = '2px solid rgba(67, 70, 75, 1)'; 
-    }
-
-    if (messageDevContainer) {
-      messageDevContainer.style.border = '2px solid rgba(67, 70, 75, 1)'; 
-    }
-
-    if (themeButton) {
-      themeButton.style.border = '2px solid rgba(67, 70, 75, 1)';
-    }
-
-    if (newTabButton) {
-      newTabButton.style.border = '2px solid rgba(67, 70, 75, 1)'; 
-    }
-
-    if (hideButton) {
-      hideButton.style.border = '2px solid rgba(67, 70, 75, 1)';
-    }
-  }
-
-  themeActive = !themeActive;
-}
-
-const themeButton = document.getElementById('theme-button');
-themeButton.addEventListener('click', itzkvrtTheme);
+    const themeButton = document.getElementById('theme-button');
+    themeButton.addEventListener('click', itzkvrtTheme);
   });
 </script>
   </body>
