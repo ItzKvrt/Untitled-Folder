@@ -485,10 +485,12 @@
       const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button, .theme-button');
       const sillyImages = document.querySelectorAll('.silly-image');
       const header = document.querySelector("h1");
+      const messageDevContainer = document.querySelector(".message-devs-container");
 
       if (themeActive) {
         allTextElements.forEach((element) => {
           element.style.color = 'white';
+          element.style.textShadow = 'none';
         });
 
         sillyImages.forEach((image) => {
@@ -498,9 +500,14 @@
         if (header) {
           header.style.borderBottom = 'none';
         }
+
+        if (messageDevContainer) {
+          messageDevContainer.style.border = 'none';
+        }
       } else {
         allTextElements.forEach((element) => {
           element.style.color = 'red';
+          element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
         });
 
         sillyImages.forEach((image) => {
@@ -509,6 +516,10 @@
 
         if (header) {
           header.style.borderBottom = '2px solid red';
+        }
+
+        if (messageDevContainer) {
+          messageDevContainer.style.border = '2px solid red';
         }
       }
 
