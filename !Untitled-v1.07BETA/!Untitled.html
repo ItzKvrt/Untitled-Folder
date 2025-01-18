@@ -491,7 +491,6 @@ function itzkvrtTheme() {
   const hideButton = document.querySelector("#hide-button");
 
   if (!themeActive) {
-    // Set theme to active (apply red borders and red text)
     allTextElements.forEach((element) => {
       element.style.color = 'red';
       element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
@@ -522,22 +521,21 @@ function itzkvrtTheme() {
     }
 
   } else {
-    // Set theme to inactive (apply default borders and red text shadow)
     allTextElements.forEach((element) => {
       element.style.color = 'white';
       element.style.textShadow = 'none';
     });
 
     sillyImages.forEach((image) => {
-      image.style.border = '2px solid rgba(67, 70, 75, 1)';
+      image.style.border = '2px solid rgba(67, 70, 75, 1)'; 
     });
 
     if (header) {
-      header.style.borderBottom = '2px solid rgba(67, 70, 75, 1)';
+      header.style.borderBottom = '2px solid rgba(67, 70, 75, 1)'; 
     }
 
     if (messageDevContainer) {
-      messageDevContainer.style.border = '2px solid rgba(67, 70, 75, 1)';
+      messageDevContainer.style.border = '2px solid rgba(67, 70, 75, 1)'; 
     }
 
     if (themeButton) {
@@ -545,7 +543,7 @@ function itzkvrtTheme() {
     }
 
     if (newTabButton) {
-      newTabButton.style.border = '2px solid rgba(67, 70, 75, 1)';
+      newTabButton.style.border = '2px solid rgba(67, 70, 75, 1)'; 
     }
 
     if (hideButton) {
@@ -553,7 +551,7 @@ function itzkvrtTheme() {
     }
   }
 
-  themeActive = !themeActive; // Toggle themeActive state
+  themeActive = !themeActive;
 }
 
 const themeButton = document.getElementById('theme-button');
