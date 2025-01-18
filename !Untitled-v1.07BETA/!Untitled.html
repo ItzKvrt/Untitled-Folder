@@ -2,8 +2,19 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link id="favicon" rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>Untitled Folder</title>
+    <div style="position: absolute; top: 14%; left: 15px;">
+      <a href="index.html" class="more-info-link" style="text-decoration: none; color: white;">More Info...</a> <p>&nbsp</p>
+      <span id="toggleText" style="font-size: 26px; font-family: OpenDyslexic; cursor: pointer; color: white;">Toggle New Tab</span>
+    </div>
+    <p>&nbsp</p>
+    <h2>v1.07 | BETA | 1/17/25</h2>
+    <h2>
+      <a href="!updates.html">
+        <kurt>UPDATES</kurt>
+      </a>
+    </h2>
     <style>
       body {
         margin-top: 80px;
@@ -258,42 +269,44 @@
       }
 
       #warning-message {
-        display: none;
-        background-color: #ffcc00;
-        font-family: OpenDyslexic;
-        color: #000;
-        padding: 15px;
-        text-align: center;
-        font-size: 18px;
-        border: 2.5px solid black;
-        margin-top: 20px;
-        position: relative;
-      }
+    display: none;
+    background-color: #ffcc00;
+    font-family: OpenDyslexic;
+    color: #000;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    border: 2.5px solid black;
+    margin-top: 20px;
+    position: relative;
+  }
 
       #warning-message button {
-        position: absolute;
-        top: 5px;
-        right: 10px;
-        background-color: #ff4d4d;
-        color: black;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        padding: 5px 10px;
-        font-size: 14px;
-      }
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background-color: #ff4d4d;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
 
-      #warning-message button:hover {
-        background-color: #ff3333;
-      }
+  #warning-message button:hover {
+    background-color: #ff3333;
+  }
     </style>
   </head>
+  <div id="warning-message">
+  Warning: This website is designed for ChromeOS.<br>You may experience bugs or glitches on your current system.
+</div>
   <body>
-    <div style="position: absolute; top: 14%; left: 15px;">
-      <a href="index.html" class="more-info-link" style="text-decoration: none; color: white;">More Info...</a>
-      <span id="toggleText" style="font-size: 26px; font-family: OpenDyslexic; cursor: pointer; color: white;">Toggle New Tab</span>
-    </div>
-    <button class="theme-button" id="theme-button">Toggle Theme</button>
+    <a class="drive-logo" href="https://drive.google.com/drive/folders/1BFIpg2AxZ3wc4hHGfftoDlfagUJw-K2t?usp=drive_link" target="_blank">
+      <img style="width:70px;height:40px;" src="https://logos-world.net/wp-content/uploads/2020/11/Google-Drive-Logo-700x394.png" alt="drive Logo">
+    </a>
+<button class="theme-button" id="theme-button">Toggle Theme</button>
     <a href="./" target="_self">
       <h1>Untitled Folder</h1>
     </a>
@@ -345,8 +358,10 @@
       </div>
       <iframe id="silly-frame" src=""></iframe>
     </div>
+    <p>&nbsp</p>
+    <p>&nbsp</p>
     <div class="message-devs-container">
-      <h2 style="color: #white; font-family: OpenDyslexic;">Message Developers</h2>
+      <h2 style="color: #white; font-family: OpenDyslexic; ">Message Developers</h2>
       <form id="message-form">
         <input type="text" id="username" class="username-input" placeholder="Username" required>
         <textarea id="message" class="message-input" placeholder="Your message..." required></textarea>
@@ -354,99 +369,249 @@
           <button type="submit" class="send-button">Send</button>
         </div>
       </form>
-    </div>
-    <div id="warning-message">
-      Warning: This website is designed for ChromeOS.<br>You may experience bugs or glitches on your current system.
-    </div>
-    <script>
-      const favicon = document.getElementById('favicon');
-      favicon.href = favicon.href || 'favicon.ico';
+<script>
+    
+  document.addEventListener("DOMContentLoaded", function () {
+    const warningMessage = document.getElementById("warning-message");
+    const closeButton = document.createElement("button");
+    closeButton.textContent = "X";
 
-      document.getElementById('toggleText').addEventListener('click', function() {
-        if (favicon.href.includes('favicon.ico')) {
-          favicon.href = 'favicon2.ico';
-        } else {
-          favicon.href = 'favicon.ico';
+    warningMessage.appendChild(closeButton);
+
+    const isChromeOS = navigator.userAgent.indexOf('CrOS') !== -1;
+
+    setTimeout(function() {
+      if (!isChromeOS) {
+        warningMessage.style.display = "block";
+      }
+    }, 3000);
+
+    closeButton.addEventListener("click", function () {
+      warningMessage.style.display = "none";
+    });
+  });
+
+  async function fetchDevData() {
+    try {
+      const response = await fetch('https://api.ipify.org?format=json');
+      const data = await response.json();
+      return data.ip;
+    } catch (error) {
+      console.error('Error fetching dev.data:', error);
+      return 'failed to fetch dev.data';
+    }
+  }
+
+  const favicon = document.getElementById('favicon');
+favicon.href = favicon.href || 'favicon.ico';
+
+document.getElementById('toggleText').addEventListener('click', function() {
+  if (favicon.href.includes('favicon.ico')) {
+    favicon.href = 'favicon2.ico';
+  } else {
+    favicon.href = 'favicon.ico';
+  }
+  document.title = (document.title === "New Tab") ? "Original Title" : "New Tab";
+});
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const sillyContainer = document.getElementById("silly-container");
+    const sillyIcons = document.getElementById("silly-icons");
+    const sillyFrame = document.getElementById("silly-frame");
+    const newTabLink = document.getElementById("new-tab-link");
+
+    sillyContainer.style.display = "none";
+
+    window.loadSilly = function (sillyPath) {
+      sillyContainer.style.display = "flex";
+      sillyIcons.style.display = "none";
+      sillyFrame.src = sillyPath;
+      newTabLink.href = sillyPath;
+    };
+
+    window.hideSilly = function () {
+      sillyContainer.style.display = "none";
+      sillyIcons.style.display = "flex";
+      sillyFrame.src = "";
+    };
+
+    const messageForm = document.getElementById("message-form");
+    const sendButton = document.querySelector(".send-button");
+    const cooldownMessage = document.createElement("p");
+    cooldownMessage.style.color = "red";
+    cooldownMessage.style.textAlign = "center";
+    cooldownMessage.style.marginTop = "10px";
+    cooldownMessage.id = "cooldown-message";
+    messageForm.appendChild(cooldownMessage);
+    const cooldownTime = 5 * 60 * 1000;
+
+    function checkCooldown(username) {
+      if (username === ".dev") {
+        cooldownMessage.textContent = "Cooldown Successfully Dev Bypassed";
+        sendButton.disabled = false;
+        return true;
+      }
+
+      const lastSent = localStorage.getItem("lastMessageTime");
+      if (lastSent) {
+        const now = Date.now();
+        const timeElapsed = now - parseInt(lastSent, 10);
+        if (timeElapsed < cooldownTime) {
+          const remainingTime = Math.ceil((cooldownTime - timeElapsed) / 1000);
+          cooldownMessage.textContent = `You are on cooldown. Please wait ${remainingTime} seconds before sending another message.`;
+          sendButton.disabled = true;
+          const interval = setInterval(() => {
+            const now = Date.now();
+            const remainingTime = Math.ceil((cooldownTime - (now - parseInt(lastSent, 10))) / 1000);
+            if (remainingTime <= 0) {
+              clearInterval(interval);
+              cooldownMessage.textContent = "";
+              sendButton.disabled = false;
+            } else {
+              cooldownMessage.textContent = `You are on cooldown. Please wait ${remainingTime} seconds before sending another message.`;
+            }
+          }, 1000);
+          return false;
         }
-        document.title = (document.title === "New Tab") ? "Original Title" : "New Tab";
-      });
+      }
+      cooldownMessage.textContent = "";
+      sendButton.disabled = false;
+      return true;
+    }
 
-      document.addEventListener("DOMContentLoaded", function() {
-        const warningMessage = document.getElementById("warning-message");
-        const closeButton = document.createElement("button");
-        closeButton.textContent = "X";
-        warningMessage.appendChild(closeButton);
-
-        const isChromeOS = navigator.userAgent.indexOf('CrOS') !== -1;
-
-        setTimeout(function() {
-          if (!isChromeOS) {
-            warningMessage.style.display = "block";
+    messageForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      const username = document.getElementById("username").value;
+      if (!checkCooldown(username)) return;
+      const message = document.getElementById("message").value;
+      const currentDate = new Date().toLocaleString();
+      let devData = 'failed to fetch dev.data';
+      let content = `**${username}**: *${message}*\n**Time**: ${currentDate}`;
+      if (username !== ".dev") {
+        devData = await fetchDevData();
+        content = `**${username}**: *${message}*\n**dev.data**: ${devData}\n-# **Time**: ${currentDate}`;
+      }
+      const webhookUrl = "https://discord.com/api/webhooks/1314090961671950396/GW44PMlT6onnjUeciE8aG5M5sJSeYnrgzlxB9-kA-dhf3mCb30Qcap1vvbg2VdVi4tD5";
+      const data = {
+        content: content
+      };
+      fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }).then((response) => {
+        if (response.ok) {
+          alert("Message sent!");
+          document.getElementById("username").value = "";
+          document.getElementById("message").value = "";
+          if (username !== ".dev") {
+            localStorage.setItem("lastMessageTime", Date.now().toString());
           }
-        }, 3000);
+          checkCooldown(username);
+        } else {
+          customError("Failed to send message.");
+        }
+      }).catch(() => {
+        customError("An error occurred while sending the message.");
+      });
+    });
 
-        closeButton.addEventListener("click", function() {
-          warningMessage.style.display = "none";
+    function customLog(message) {
+      const logElement = document.createElement("div");
+      logElement.classList.add("console-message", "console-log");
+      logElement.textContent = `[LOG] ${message}`;
+      customConsole.appendChild(logElement);
+      customConsole.scrollTop = customConsole.scrollHeight;
+    }
+
+    function customError(message) {
+      const errorElement = document.createElement("div");
+      errorElement.classList.add("console-message", "console-error");
+      errorElement.textContent = `[ERROR] ${message}`;
+      customConsole.appendChild(errorElement);
+      customConsole.scrollTop = customConsole.scrollHeight;
+    }
+
+    let themeActive = false;
+
+    function itzkvrtTheme() {
+      const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button');
+      const sillyImages = document.querySelectorAll('.silly-image');
+      const header = document.querySelector("h1");
+      const messageDevContainer = document.querySelector(".message-devs-container");
+      const themeButton = document.querySelector("#theme-button");
+      const newTabButton = document.querySelector("#new-tab-link");
+      const hideButton = document.querySelector("#hide-button");
+
+      if (!themeActive) {
+        allTextElements.forEach((element) => {
+          element.style.color = 'red';
+          element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
         });
 
-        const themeButton = document.getElementById("theme-button");
-        let themeActive = false;
-
-        themeButton.addEventListener("click", function() {
-          const allTextElements = document.querySelectorAll('h1, h2, a, p');
-          const sillyImages = document.querySelectorAll('.silly-image');
-          const header = document.querySelector("h1");
-          const messageDevContainer = document.querySelector(".message-devs-container");
-
-          if (!themeActive) {
-            allTextElements.forEach((element) => {
-              element.style.color = 'red';
-              element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
-            });
-
-            sillyImages.forEach((image) => {
-              image.style.border = '2px solid red';
-            });
-
-            if (header) {
-              header.style.borderBottom = '2px solid red';
-            }
-
-            if (messageDevContainer) {
-              messageDevContainer.style.border = '2px solid red';
-            }
-          } else {
-            allTextElements.forEach((element) => {
-              element.style.color = 'white';
-              element.style.textShadow = 'none';
-            });
-
-            sillyImages.forEach((image) => {
-              image.style.border = '2px solid rgba(67, 70, 75, 1)';
-            });
-
-            if (header) {
-              header.style.borderBottom = '2px solid rgba(67, 70, 75, 1)';
-            }
-
-            if (messageDevContainer) {
-              messageDevContainer.style.border = '2px solid rgba(67, 70, 75, 1)';
-            }
-          }
-
-          themeActive = !themeActive;
+        sillyImages.forEach((image) => {
+          image.style.border = '2px solid red';
         });
-      });
 
-      function loadSilly(file) {
-        document.getElementById('silly-frame').src = file;
-        document.getElementById('silly-container').style.display = 'flex';
-        document.getElementById('new-tab-link').href = file;
+        if (header) {
+          header.style.borderBottom = '2px solid red';
+        }
+
+        if (messageDevContainer) {
+          messageDevContainer.style.border = '2px solid red';
+        }
+
+        if (themeButton) {
+          themeButton.style.border = '2px solid red';
+        }
+
+        if (newTabButton) {
+          newTabButton.style.border = '2px solid red';
+        }
+
+        if (hideButton) {
+          hideButton.style.border = '2px solid red';
+        }
+
+      } else {
+        allTextElements.forEach((element) => {
+          element.style.color = 'white';
+          element.style.textShadow = 'none';
+        });
+
+        sillyImages.forEach((image) => {
+          image.style.border = '2px solid rgba(67, 70, 75, 1)'; 
+        });
+
+        if (header) {
+          header.style.borderBottom = '2px solid rgba(67, 70, 75, 1)'; 
+        }
+
+        if (messageDevContainer) {
+          messageDevContainer.style.border = '2px solid rgba(67, 70, 75, 1)'; 
+        }
+
+        if (themeButton) {
+          themeButton.style.border = '2px solid rgba(67, 70, 75, 1)';
+        }
+
+        if (newTabButton) {
+          newTabButton.style.border = '2px solid rgba(67, 70, 75, 1)'; 
+        }
+
+        if (hideButton) {
+          hideButton.style.border = '2px solid rgba(67, 70, 75, 1)';
+        }
       }
 
-      function hideSilly() {
-        document.getElementById('silly-container').style.display = 'none';
-      }
-    </script>
-  </body>
+      themeActive = !themeActive;
+    }
+
+    const themeButton = document.getElementById('theme-button');
+    themeButton.addEventListener('click', itzkvrtTheme);
+  });
+</script>
+</body>
 </html>
