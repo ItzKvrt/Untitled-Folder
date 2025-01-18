@@ -482,7 +482,7 @@
 let themeActive = false;
 
 function itzkvrtTheme() {
-  const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button, .theme-button');
+  const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button');
   const sillyImages = document.querySelectorAll('.silly-image');
   const header = document.querySelector("h1");
   const messageDevContainer = document.querySelector(".message-devs-container");
@@ -490,10 +490,11 @@ function itzkvrtTheme() {
   const newTabButton = document.querySelector("#new-tab-link");
   const hideButton = document.querySelector("#hide-button");
 
-  if (themeActive) {
+  if (!themeActive) {
+    // Set theme to active (apply red borders and red text)
     allTextElements.forEach((element) => {
-      element.style.color = 'white';
-      element.style.textShadow = 'none';
+      element.style.color = 'red';
+      element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
     });
 
     sillyImages.forEach((image) => {
@@ -501,7 +502,7 @@ function itzkvrtTheme() {
     });
 
     if (header) {
-      header.style.borderBottom = '2px solid red'; 
+      header.style.borderBottom = '2px solid red';
     }
 
     if (messageDevContainer) {
@@ -521,9 +522,10 @@ function itzkvrtTheme() {
     }
 
   } else {
+    // Set theme to inactive (apply default borders and red text shadow)
     allTextElements.forEach((element) => {
-      element.style.color = 'red';
-      element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
+      element.style.color = 'white';
+      element.style.textShadow = 'none';
     });
 
     sillyImages.forEach((image) => {
@@ -551,7 +553,7 @@ function itzkvrtTheme() {
     }
   }
 
-  themeActive = !themeActive;
+  themeActive = !themeActive; // Toggle themeActive state
 }
 
 const themeButton = document.getElementById('theme-button');
