@@ -371,7 +371,7 @@
       </form>
 <script>
   
-  document.addEventListener("DOMContentLoaded", function () {
+   document.addEventListener("DOMContentLoaded", function () {
     const warningMessage = document.getElementById("warning-message");
     const closeButton = document.createElement("button");
     closeButton.textContent = "X";
@@ -380,9 +380,11 @@
 
     const isChromeOS = navigator.userAgent.indexOf('CrOS') !== -1;
 
-    if (!isChromeOS) {
-      warningMessage.style.display = "block";
-    }
+    setTimeout(function() {
+      if (!isChromeOS) {
+        warningMessage.style.display = "block";
+      }
+    }, 3000);
 
     closeButton.addEventListener("click", function () {
       warningMessage.style.display = "none";
