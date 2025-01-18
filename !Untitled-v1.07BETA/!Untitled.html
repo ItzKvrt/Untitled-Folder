@@ -484,8 +484,6 @@
     function itzkvrtTheme() {
       const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button, .theme-button');
       const sillyImages = document.querySelectorAll('.silly-image');
-      const body = document.body;
-      const pageBorders = document.querySelectorAll("h1, h2, .message-devs-container, .theme-button, .send-button");
 
       if (themeActive) {
         allTextElements.forEach((element) => {
@@ -493,32 +491,16 @@
         });
 
         sillyImages.forEach((image) => {
-          image.style.border = '2px solid #333'; 
+          image.style.border = '2px solid #333';
         });
-
-        pageBorders.forEach((element) => {
-          if (element !== body) {
-            element.style.border = 'none';
-          }
-        });
-
-        body.style.border = 'none';
       } else {
         allTextElements.forEach((element) => {
           element.style.color = 'red';
         });
 
         sillyImages.forEach((image) => {
-          image.style.border = '2px solid red'; 
+          image.style.border = '2px solid red';
         });
-
-        pageBorders.forEach((element) => {
-          if (element !== body) {
-            element.style.border = '2px solid red'; 
-          }
-        });
-
-        body.style.border = '2px solid red'; 
       }
 
       themeActive = !themeActive;
