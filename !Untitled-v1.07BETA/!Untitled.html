@@ -484,6 +484,7 @@
     function itzkvrtTheme() {
       const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button, .theme-button');
       const sillyImages = document.querySelectorAll('.silly-image');
+      const header = document.querySelector("h1");
 
       if (themeActive) {
         allTextElements.forEach((element) => {
@@ -493,6 +494,10 @@
         sillyImages.forEach((image) => {
           image.style.border = '2px solid #333';
         });
+
+        if (header) {
+          header.style.borderBottom = 'none';
+        }
       } else {
         allTextElements.forEach((element) => {
           element.style.color = 'red';
@@ -501,6 +506,10 @@
         sillyImages.forEach((image) => {
           image.style.border = '2px solid red';
         });
+
+        if (header) {
+          header.style.borderBottom = '2px solid red';
+        }
       }
 
       themeActive = !themeActive;
