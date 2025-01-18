@@ -1,362 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Updates</title>
-  <style>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updates</title>
+    <style>
       @font-face {
-  font-family: 'OpenDyslexic';
-  src: url('OpenDyslexic-Regular.woff2') format('woff2');
-}
-  
-   body {
-    margin: 0;
-    background-color: #181818;
-    font-family: OpenDyslexic;
-    transition: background 0.3s;
-    margin-bottom: 120px;
-   }
+        font-family: 'OpenDyslexic';
+        src: url('OpenDyslexic-Regular.woff2') format('woff2');
+      }
 
-   h1 {
-    font-size: 50;
-    font-family: OpenDyslexic;
-    text-align: center;
-    margin: 0;
-    padding: 10px 0;
-    color: white;
-    border-bottom: 2px solid rgba(67,70,75);
-    background: rgba(169, 169, 169, 0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-   }
+      body {
+        margin: 0;
+        background-color: #181818;
+        font-family: OpenDyslexic;
+        transition: background 0.3s;
+        margin-bottom: 120px;
+      }
 
-   a {
-    color: white;
-    font-family: OpenDyslexic;
-    margin: 0px;
-    text-decoration: none;
-   }
+      h1 {
+        font-size: 50;
+        font-family: OpenDyslexic;
+        text-align: center;
+        margin: 0;
+        padding: 10px 0;
+        color: white;
+        border-bottom: 2px solid rgba(67,70,75);
+        background: rgba(169, 169, 169, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
 
-   a:hover {
-    color: red;
-    cursor: pointer;
-    text-decoration: none;
-   }
+      a {
+        color: white;
+        font-family: OpenDyslexic;
+        margin: 0px;
+        text-decoration: none;
+      }
 
-   .theme-button {
-    position: fixed;
-    top: 10px;
-    font-family: OpenDyslexic;
-    right: 20px;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 1001;
-    font-size: 1em;
-   }
+      a:hover {
+        color: red;
+        cursor: pointer;
+        text-decoration: none;
+      }
 
-   .theme-button:hover {
-    background-color: #555;
-   }
+      .theme-button {
+        position: fixed;
+        top: 10px;
+        font-family: OpenDyslexic;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 1001;
+        font-size: 1em;
+      }
 
-   .drive-logo {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    width: 40px;
-    height: 40px;
-    z-index: 1001;
-   }
+      .theme-button:hover {
+        background-color: #555;
+      }
 
-   .drive-logo img {
-    width: 100%;
-    height: auto;
-    cursor: pointer;
-   }
+      .drive-logo {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        width: 40px;
+        height: 40px;
+        z-index: 1001;
+      }
 
-   .updates {
-    text-align: center;
-    font-family: OpenDyslexic;
-    color: white;
-    margin-top: 90px;
-   }
+      .drive-logo img {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+      }
 
-   .updates h2 {
-    font-size: 2.5em;
-    font-family: OpenDyslexic;
-   }
+      .updates {
+        text-align: center;
+        font-family: OpenDyslexic;
+        color: white;
+        margin-top: 90px;
+      }
 
-   .updates p {
-    font-family: OpenDyslexic;
-    font-size: 1.6em;
-    font-weight: bold;
-    line-height: 0.2;
-    color: white;
-    margin-top: 20px;
-   }
+      .updates h2 {
+        font-size: 2.5em;
+        font-family: OpenDyslexic;
+      }
 
-   .line {
-    width: 50%;
-    margin: 20px auto;
-    border-top: 1px solid white;
-   }
+      .updates p {
+        font-family: OpenDyslexic;
+        font-size: 1.6em;
+        font-weight: bold;
+        line-height: 0.2;
+        color: white;
+        margin-top: 20px;
+      }
 
-   .message-devs-container {
-    width: 80%;
-    font-family: OpenDyslexic;
-    position: relative;
-    margin: 0 auto;
-    background-color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    margin-top: 20px;
-    bottom: 0;
-   }
+      .line {
+        width: 50%;
+        margin: 20px auto;
+        border-top: 1px solid white;
+      }
 
-   .message-devs-container h2 {
-    color: white;
-    font-family: OpenDyslexic;
-    text-align: center;
-    margin-bottom: 10px;
-   }
+      .message-devs-container {
+        width: 80%;
+        font-family: OpenDyslexic;
+        position: relative;
+        margin: 0 auto;
+        background-color: #333;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        margin-top: 20px;
+        bottom: 0;
+      }
 
-   .username-input,
-   .message-input {
-    width: 100%;
-    padding: 10px;
-    font-family: OpenDyslexic;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-   }
+      .message-devs-container h2 {
+        color: white;
+        font-family: OpenDyslexic;
+        text-align: center;
+        margin-bottom: 10px;
+      }
 
-   .send-button {
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    border: none;
-    font-family: OpenDyslexic;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    width: 100%;
-   }
+      .username-input,
+      .message-input {
+        width: 100%;
+        padding: 10px;
+        font-family: OpenDyslexic;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
 
-   .send-button:hover {
-    background-color: #555;
-   }
+      .send-button {
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+        border: none;
+        font-family: OpenDyslexic;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+        width: 100%;
+      }
 
-   div.myInvisibleDiv {
-    overflow: hidden;
-    visibility: hidden;
-    height: 250px width: 95%;
-   }
+      .send-button:hover {
+        background-color: #555;
+      }
 
-   summary: {
-    display: none
-   }
+      div.myInvisibleDiv {
+        overflow: hidden;
+        visibility: hidden;
+        height: 250px width: 95%;
+      }
 
-   summary:after {
-    content: "►";
-    color: #fff;
-    float: center;
-   }
+      summary: {
+        display: none
+      }
 
-   summary::marker {
-    content: none;
-   }
+      summary:after {
+        content: "►";
+        color: #fff;
+        float: center;
+      }
 
-   details[open] summary:after {
-    content: "▼";
-   }
-  </style>
- </head>
- <body>
-  <a class="drive-logo" href="https://drive.google.com/drive/folders/1BFIpg2AxZ3wc4hHGfftoDlfagUJw-K2t" target="_blank">
-   <img style="width:70px;height:40px;" src="https://logos-world.net/wp-content/uploads/2020/11/Google-Drive-Logo-700x394.png" alt="Google Drive Logo">
-  </a>
-<button class="theme-button" id="theme-button">Toggle Theme</button>
-  <a href="!Untitled.html" target="_self">
-   <h1>Untitled Folder</h1>
-  </a>
-  <div class="updates">
-   <h2>
-    <a style="font-size: 26px;" href="!Untitled.html">GO BACK</a>
-   </h2>
-   <h2>Update Logs</h2>
+      summary::marker {
+        content: none;
+      }
+
+      details[open] summary:after {
+        content: "▼";
+      }
+    </style>
+  </head>
+  <body>
+    <a class="drive-logo" href="https://drive.google.com/drive/folders/1BFIpg2AxZ3wc4hHGfftoDlfagUJw-K2t" target="_blank">
+      <img style="width:70px;height:40px;" src="https://logos-world.net/wp-content/uploads/2020/11/Google-Drive-Logo-700x394.png" alt="Google Drive Logo">
+    </a>
+
+    <button class="theme-button" id="theme-button">Toggle Theme</button>
+
+    <a href="!Untitled.html" target="_self">
+      <h1>Untitled Folder</h1>
+    </a>
+
+    <div class="updates">
+      <h2>
+        <a style="font-size: 26px;" href="!Untitled.html">GO BACK</a>
+      </h2>
+      <h2>Update Logs</h2>
       <details>
-    <summary>
-     <p>v1.07</p>Details:
-    </summary>
-    <li>Added<a style="text-shadow: -1px -1px 0 solid white, 1px -1px 0 solid white, -1px 1px 0 solid white, 1px 1px 0 solid white;
-" href="https://opendyslexic.org"> OpenDyslexic</a> Font!</li>
-    <li>Added "INFO" page</li>
-    <li>New Theme Button</li>
-    <li>Added Warning Message for Non-ChromeOS Users</li>
-   </details>
-   <div class="line"></div>
-   <details>
-    <summary>
-     <p>v1.06</p>Details:
-    </summary>
-    <li>Fixed Updates Page</li>
-    <li>Fixed Eaglercraft 1.8</li>
-    <li>Updated Broken JS</li>
-    <li>Added Requested Games</li>
-   </details>
-   <div class="line"></div>
-   <details>
-    <summary>
-     <p>v1.05</p>Details:
-    </summary>
-    <li>Added Updates Page</li>
-    <li>Added Dev Message System</li>
-    <li>Fixed ROMS Folder</li>
-    <li>Site CSS Update</li>
-    <li>Replace Discord with Drive Link</li>
-   </details>
-   <div class="line"></div>
-   <details>
-    <summary>
-     <p>v1.04</p>Details:
-    </summary>
-    </li>
-    <li>Added Hacked ROMS</li>
-    <li>Site CSS Update</li>
-   </details>
-   <div class="line"></div>
-   <details>
-    <summary>
-     <p>v1.03</p>Details:
-    </summary>
-    <li>Added SM64</li>
-    <li>Added Chrome Dino</li>
-    <li>Added Minecraft JS</li>
-    <li>Added WebArch Standalone</li>
-    <li>Discord Server is Up!</li>
-   </details>
-   <div class="line"></div>
-   <details>
-    <summary>
-     <p>v1.02</p>Details:
-    </summary>
-    <li>Added Slope</li>
-    <li>Added Tetris</li>
-    <li>Fixed FNAW</li>
-    <li>Updated Minecraft</li>
-    <li>Added New Theme</li>
-   </details>
-   <div class="line"></div>
-  </div>
-  <p>&nbsp</p>
-  <p>&nbsp</p>
-  </div>
-  <script>
-   document.addEventListener("DOMContentLoaded", function() {
-      const sillyContainer = document.getElementById("silly-container");
-      const sillyIcons = document.getElementById("silly-icons");
-      const sillyFrame = document.getElementById("silly-frame");
-      const newTabLink = document.getElementById("new-tab-link");
-      document.getElementById("silly-container").style.display = "none";
-      window.loadSilly = function(sillyPath) {
-       sillyContainer.style.display = "flex";
-       sillyIcons.style.display = "none";
-       sillyFrame.src = sillyPath;
-       newTabLink.href = sillyPath;
-      };
-      window.hideSilly = function() {
-       sillyContainer.style.display = "none";
-       sillyIcons.style.display = "flex";
-       sillyFrame.src = "";
-      };
-      document.body.style.zoom = "90%";
+        <summary>
+          <p>v1.07</p>Details:
+        </summary>
+        <li>Added <a href="https://opendyslexic.org">OpenDyslexic</a> Font!</li>
+        <li>Added "INFO" page</li>
+        <li>New Theme Button</li>
+        <li>Added Warning Message for Non-ChromeOS Users</li>
+      </details>
+      <div class="line"></div>
+      <details>
+        <summary>
+          <p>v1.06</p>Details:
+        </summary>
+        <li>Fixed Updates Page</li>
+        <li>Fixed Eaglercraft 1.8</li>
+        <li>Updated Broken JS</li>
+        <li>Added Requested Games</li>
+      </details>
+      <div class="line"></div>
+      <details>
+        <summary>
+          <p>v1.05</p>Details:
+        </summary>
+        <li>Added Updates Page</li>
+        <li>Added Dev Message System</li>
+        <li>Fixed ROMS Folder</li>
+        <li>Site CSS Update</li>
+        <li>Replace Discord with Drive Link</li>
+      </details>
+      <div class="line"></div>
+      <details>
+        <summary>
+          <p>v1.04</p>Details:
+        </summary>
+        <li>Added Hacked ROMS</li>
+        <li>Site CSS Update</li>
+      </details>
+      <div class="line"></div>
+      <details>
+        <summary>
+          <p>v1.03</p>Details:
+        </summary>
+        <li>Added SM64</li>
+        <li>Added Chrome Dino</li>
+        <li>Added Minecraft JS</li>
+        <li>Added WebArch Standalone</li>
+        <li>Discord Server is Up!</li>
+      </details>
+      <div class="line"></div>
+      <details>
+        <summary>
+          <p>v1.02</p>Details:
+        </summary>
+        <li>Added Slope</li>
+        <li>Added Tetris</li>
+        <li>Fixed FNAW</li>
+        <li>Updated Minecraft</li>
+        <li>Added New Theme</li>
+      </details>
+      <div class="line"></div>
+    </div>
 
-let themeActive = false;
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        let themeActive = false;
 
-function itzkvrtTheme() {
-  const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button');
-  const sillyImages = document.querySelectorAll('.silly-image');
-  const header = document.querySelector("h1");
-  const messageDevContainer = document.querySelector(".message-devs-container");
-  const themeButton = document.querySelector("#theme-button");
-  const newTabButton = document.querySelector("#new-tab-link");
-  const hideButton = document.querySelector("#hide-button");
+        function itzkvrtTheme() {
+          const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button');
+          const sillyImages = document.querySelectorAll('.silly-image');
+          const header = document.querySelector("h1");
+          const messageDevContainer = document.querySelector(".message-devs-container");
+          const themeButton = document.querySelector("#theme-button");
 
-  if (!themeActive) {
-    allTextElements.forEach((element) => {
-      element.style.color = 'red';
-      element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
-    });
+          if (!themeActive) {
+            allTextElements.forEach((element) => {
+              element.style.color = 'red';
+              element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
+            });
 
-    sillyImages.forEach((image) => {
-      image.style.border = '2px solid red';
-    });
+            sillyImages.forEach((image) => {
+              image.style.border = '2px solid red';
+            });
 
-    if (header) {
-      header.style.borderBottom = '2px solid red';
-    }
+            if (header) {
+              header.style.borderBottom = '2px solid red';
+            }
 
-    if (messageDevContainer) {
-      messageDevContainer.style.border = '2px solid red';
-    }
+            if (messageDevContainer) {
+              messageDevContainer.style.border = '2px solid red';
+            }
 
-    if (themeButton) {
-      themeButton.style.border = '2px solid red';
-    }
+            if (themeButton) {
+              themeButton.style.border = '2px solid red';
+            }
+          } else {
+            allTextElements.forEach((element) => {
+              element.style.color = 'white';
+              element.style.textShadow = 'none';
+            });
 
-    if (newTabButton) {
-      newTabButton.style.border = '2px solid red';
-    }
+            sillyImages.forEach((image) => {
+              image.style.border = '2px solid rgba(67, 70, 75, 1)';
+            });
 
-    if (hideButton) {
-      hideButton.style.border = '2px solid red';
-    }
+            if (header) {
+              header.style.borderBottom = '2px solid rgba(67, 70, 75, 1)';
+            }
 
-  } else {
-    allTextElements.forEach((element) => {
-      element.style.color = 'white';
-      element.style.textShadow = 'none';
-    });
+            if (messageDevContainer) {
+              messageDevContainer.style.border = '2px solid rgba(67, 70, 75, 1)';
+            }
 
-    sillyImages.forEach((image) => {
-      image.style.border = '2px solid rgba(67, 70, 75, 1)';
-    });
+            if (themeButton) {
+              themeButton.style.border = '2px solid rgba(67, 70, 75, 1)';
+            }
+          }
 
-    if (header) {
-      header.style.borderBottom = '2px solid rgba(67, 70, 75, 1)';
-    }
+          themeActive = !themeActive;
+        }
 
-    if (messageDevContainer) {
-      messageDevContainer.style.border = '2px solid rgba(67, 70, 75, 1)';
-    }
-
-    if (themeButton) {
-      themeButton.style.border = '2px solid rgba(67, 70, 75, 1)';
-    }
-
-    if (newTabButton) {
-      newTabButton.style.border = '2px solid rgba(67, 70, 75, 1)';
-    }
-
-    if (hideButton) {
-      hideButton.style.border = '2px solid rgba(67, 70, 75, 1)';
-    }
-  }
-
-  themeActive = !themeActive;
-}
-
-const themeButton = document.getElementById('theme-button');
-themeButton.addEventListener('click', itzkvrtTheme);
-
-  });
-  </script>
- </body>
+        const themeButton = document.getElementById('theme-button');
+        themeButton.addEventListener('click', itzkvrtTheme);
+      });
+    </script>
+  </body>
 </html>
