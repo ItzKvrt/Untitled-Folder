@@ -201,138 +201,27 @@
         <a style="font-size: 26px;" href="!Untitled.html">GO BACK</a>
       </h2>
       <h2>Update Logs</h2>
-      <details>
-        <summary>
-          <p>v1.07</p>Details:
-        </summary>
-        <li>Added Warning Message for Non-ChromeOS Users</li>
-        <li>Added <a href="https://opendyslexic.org">OpenDyslexic</a> Font!</li>
-        <li>Fixed Issues w/ Updates HTML</li>
-        <li>Added "INFO" page</li>
-        <li>New Theme Button</li>
-      </details>
-      <div class="line"></div>
-      <details>
-        <summary>
-          <p>v1.06</p>Details:
-        </summary>
-        <li>Fixed Updates Page</li>
-        <li>Fixed Eaglercraft 1.8</li>
-        <li>Updated Broken JS</li>
-        <li>Added Requested Games</li>
-      </details>
-      <div class="line"></div>
-      <details>
-        <summary>
-          <p>v1.05</p>Details:
-        </summary>
-        <li>Added Updates Page</li>
-        <li>Added Dev Message System</li>
-        <li>Fixed ROMS Folder</li>
-        <li>Site CSS Update</li>
-        <li>Replace Discord with Drive Link</li>
-      </details>
-      <div class="line"></div>
-      <details>
-        <summary>
-          <p>v1.04</p>Details:
-        </summary>
-        <li>Added Hacked ROMS</li>
-        <li>Site CSS Update</li>
-      </details>
-      <div class="line"></div>
-      <details>
-        <summary>
-          <p>v1.03</p>Details:
-        </summary>
-        <li>Added SM64</li>
-        <li>Added Chrome Dino</li>
-        <li>Added Minecraft JS</li>
-        <li>Added WebArch Standalone</li>
-        <li>Discord Server is Up!</li>
-      </details>
-      <div class="line"></div>
-      <details>
-        <summary>
-          <p>v1.02</p>Details:
-        </summary>
-        <li>Added Slope</li>
-        <li>Added Tetris</li>
-        <li>Fixed FNAW</li>
-        <li>Updated Minecraft</li>
-        <li>Added New Theme</li>
-      </details>
-      <div class="line"></div>
+      <!-- Add your update logs here -->
     </div>
 
     <script>
       document.addEventListener("DOMContentLoaded", function() {
-        const sillyContainer = document.getElementById("silly-container");
-        const sillyIcons = document.getElementById("silly-icons");
-        const sillyFrame = document.getElementById("silly-frame");
-        const newTabLink = document.getElementById("new-tab-link");
-        document.getElementById("silly-container").style.display = "none";
-
-        window.loadSilly = function(sillyPath) {
-          sillyContainer.style.display = "flex";
-          sillyIcons.style.display = "none";
-          sillyFrame.src = sillyPath;
-          newTabLink.href = sillyPath;
-        };
-
-        window.hideSilly = function() {
-          sillyContainer.style.display = "none";
-          sillyIcons.style.display = "flex";
-          sillyFrame.src = "";
-        };
-
         let themeActive = false;
 
-        function itzkvrtTheme() {
+        function toggleTheme() {
+          // Elements to change when the theme toggles
+          const body = document.body;
           const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button, li');
+          const lines = document.querySelectorAll('.line');
           const sillyImages = document.querySelectorAll('.silly-image');
           const header = document.querySelector("h1");
           const messageDevContainer = document.querySelector(".message-devs-container");
           const themeButton = document.querySelector("#theme-button");
           const newTabButton = document.querySelector("#new-tab-link");
-          const hideButton = document.querySelector("#hide-button");
-          const lines = document.querySelectorAll('.line');
 
           if (!themeActive) {
-            allTextElements.forEach((element) => {
-              element.style.color = 'red';
-              element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
-            });
-
-            lines.forEach((line) => {
-              line.style.borderTop = '2px solid red';
-            });
-
-            sillyImages.forEach((image) => {
-              image.style.border = '2px solid red';
-            });
-
-            if (header) {
-              header.style.borderBottom = '2px solid red';
-            }
-
-            if (messageDevContainer) {
-              messageDevContainer.style.border = '2px solid red';
-            }
-
-            if (themeButton) {
-              themeButton.style.border = '2px solid red';
-            }
-
-            if (newTabButton) {
-              newTabButton.style.border = '2px solid red';
-            }
-
-            if (hideButton) {
-              hideButton.style.border = '2px solid red';
-            }
-
-          } else {
+            // Activate Dark Theme (Default)
+            body.style.backgroundColor = "#181818"; // Dark background color
             allTextElements.forEach((element) => {
               element.style.color = 'white';
               element.style.textShadow = 'none';
@@ -362,16 +251,45 @@
               newTabButton.style.border = '2px solid rgba(67, 70, 75, 1)';
             }
 
-            if (hideButton) {
-              hideButton.style.border = '2px solid rgba(67, 70, 75, 1)';
+          } else {
+            // Activate Light Theme
+            body.style.backgroundColor = "#ffffff"; // Light background color
+            allTextElements.forEach((element) => {
+              element.style.color = 'black';
+              element.style.textShadow = 'none';
+            });
+
+            lines.forEach((line) => {
+              line.style.borderTop = '1px solid black';
+            });
+
+            sillyImages.forEach((image) => {
+              image.style.border = '2px solid #000000';
+            });
+
+            if (header) {
+              header.style.borderBottom = '2px solid #000000';
+            }
+
+            if (messageDevContainer) {
+              messageDevContainer.style.border = '2px solid #000000';
+            }
+
+            if (themeButton) {
+              themeButton.style.border = '2px solid #000000';
+            }
+
+            if (newTabButton) {
+              newTabButton.style.border = '2px solid #000000';
             }
           }
 
           themeActive = !themeActive;
         }
 
+        // Adding event listener to theme button
         const themeButton = document.getElementById('theme-button');
-        themeButton.addEventListener('click', itzkvrtTheme);
+        themeButton.addEventListener('click', toggleTheme);
       });
     </script>
   </body>
