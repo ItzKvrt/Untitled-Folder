@@ -481,49 +481,48 @@
 
     let themeActive = false;
 
-function itzkvrtTheme() {
-  const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button, .theme-button');
-  const sillyImages = document.querySelectorAll('.silly-image');
-  const body = document.body;
-  const pageBorders = document.querySelectorAll("h1, h2, .message-devs-container, .theme-button, .send-button");
+    function itzkvrtTheme() {
+      const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button, .theme-button');
+      const sillyImages = document.querySelectorAll('.silly-image');
+      const body = document.body;
+      const pageBorders = document.querySelectorAll("h1, h2, .message-devs-container, .theme-button, .send-button");
 
-  if (themeActive) {
-    allTextElements.forEach((element) => {
-      element.style.color = 'white';
-    });
+      if (themeActive) {
+        allTextElements.forEach((element) => {
+          element.style.color = 'white';
+        });
 
-    sillyImages.forEach((image) => {
-      image.style.border = '2px solid #333';
-    });
+        sillyImages.forEach((image) => {
+          image.style.border = '2px solid #333';
+        });
 
-    pageBorders.forEach((element) => {
-      element.style.border = 'none';
-    });
+        pageBorders.forEach((element) => {
+          element.style.border = 'none';
+        });
 
-    body.style.border = 'none';
-  } else {
-    allTextElements.forEach((element) => {
-      element.style.color = 'red';
-    });
+        body.style.border = 'none';
+      } else {
+        allTextElements.forEach((element) => {
+          element.style.color = 'red';
+        });
 
-    sillyImages.forEach((image) => {
-      image.style.border = '2px solid red';
-    });
+        sillyImages.forEach((image) => {
+          image.style.border = '2px solid red';
+        });
 
-    pageBorders.forEach((element) => {
-      element.style.border = '2px solid red';
-    });
+        pageBorders.forEach((element) => {
+          element.style.border = '2px solid red';
+        });
 
-    body.style.border = '2px solid red';
-  }
+        body.style.border = '2px solid red';
+      }
 
-  themeActive = !themeActive;
-}
+      themeActive = !themeActive;
+    }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const themeButton = document.getElementById('theme-button');
-  themeButton.addEventListener('click', itzkvrtTheme);
-});
+    const themeButton = document.getElementById('theme-button');
+    themeButton.addEventListener('click', itzkvrtTheme);
+  });
 </script>
   </body>
 </html>
