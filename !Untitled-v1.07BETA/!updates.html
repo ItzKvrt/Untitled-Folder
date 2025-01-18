@@ -201,7 +201,68 @@
         <a style="font-size: 26px;" href="!Untitled.html">GO BACK</a>
       </h2>
       <h2>Update Logs</h2>
-      <!-- Add your update logs here -->
+      <details>
+        <summary>
+          <p>v1.07</p>Details:
+        </summary>
+        <li>Added Warning Message for Non-ChromeOS Users</li>
+        <li>Added <a href="https://opendyslexic.org">OpenDyslexic</a> Font!</li>
+        <li>Fixed Issues w/ Updates HTML</li>
+        <li>Added "INFO" page</li>
+        <li>New Theme Button</li>
+      </details>
+      <div class="line"></div>
+      <details>
+        <summary>
+          <p>v1.06</p>Details:
+        </summary>
+        <li>Fixed Updates Page</li>
+        <li>Fixed Eaglercraft 1.8</li>
+        <li>Updated Broken JS</li>
+        <li>Added Requested Games</li>
+      </details>
+      <div class="line"></div>
+      <details>
+        <summary>
+          <p>v1.05</p>Details:
+        </summary>
+        <li>Added Updates Page</li>
+        <li>Added Dev Message System</li>
+        <li>Fixed ROMS Folder</li>
+        <li>Site CSS Update</li>
+        <li>Replace Discord with Drive Link</li>
+      </details>
+      <div class="line"></div>
+      <details>
+        <summary>
+          <p>v1.04</p>Details:
+        </summary>
+        <li>Added Hacked ROMS</li>
+        <li>Site CSS Update</li>
+      </details>
+      <div class="line"></div>
+      <details>
+        <summary>
+          <p>v1.03</p>Details:
+        </summary>
+        <li>Added SM64</li>
+        <li>Added Chrome Dino</li>
+        <li>Added Minecraft JS</li>
+        <li>Added WebArch Standalone</li>
+        <li>Discord Server is Up!</li>
+      </details>
+      <div class="line"></div>
+      <details>
+        <summary>
+          <p>v1.02</p>Details:
+        </summary>
+        <li>Added Slope</li>
+        <li>Added Tetris</li>
+        <li>Fixed FNAW</li>
+        <li>Updated Minecraft</li>
+        <li>Added New Theme</li>
+      </details>
+      <div class="line"></div>
     </div>
 
     <script>
@@ -209,7 +270,6 @@
         let themeActive = false;
 
         function toggleTheme() {
-          // Elements to change when the theme toggles
           const body = document.body;
           const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button, li');
           const lines = document.querySelectorAll('.line');
@@ -220,8 +280,7 @@
           const newTabButton = document.querySelector("#new-tab-link");
 
           if (!themeActive) {
-            // Activate Dark Theme (Default)
-            body.style.backgroundColor = "#181818"; // Dark background color
+            body.style.backgroundColor = "#181818";
             allTextElements.forEach((element) => {
               element.style.color = 'white';
               element.style.textShadow = 'none';
@@ -252,8 +311,7 @@
             }
 
           } else {
-            // Activate Light Theme
-            body.style.backgroundColor = "#ffffff"; // Light background color
+            body.style.backgroundColor = "#ffffff";
             allTextElements.forEach((element) => {
               element.style.color = 'black';
               element.style.textShadow = 'none';
@@ -287,7 +345,6 @@
           themeActive = !themeActive;
         }
 
-        // Adding event listener to theme button
         const themeButton = document.getElementById('theme-button');
         themeButton.addEventListener('click', toggleTheme);
       });
