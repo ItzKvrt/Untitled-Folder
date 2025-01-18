@@ -181,7 +181,7 @@
   <a class="drive-logo" href="https://drive.google.com/drive/folders/1BFIpg2AxZ3wc4hHGfftoDlfagUJw-K2t" target="_blank">
    <img style="width:70px;height:40px;" src="https://logos-world.net/wp-content/uploads/2020/11/Google-Drive-Logo-700x394.png" alt="Google Drive Logo">
   </a>
-  <button class="theme-button" onclick="toggleTheme()">Toggle Theme</button>
+<button class="theme-button" id="theme-button">Toggle Theme</button>
   <a href="!Untitled.html" target="_self">
    <h1>Untitled Folder</h1>
   </a>
@@ -277,83 +277,83 @@
       };
       document.body.style.zoom = "90%";
 
-    let themeActive = false;
+let themeActive = false;
 
-    function itzkvrtTheme() {
-      const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button, .theme-button');
-      const sillyImages = document.querySelectorAll('.silly-image');
-      const header = document.querySelector("h1");
-      const messageDevContainer = document.querySelector(".message-devs-container");
-      const themeButton = document.querySelector("#theme-button");
-      const newTabButton = document.querySelector("#new-tab-link");
-      const hideButton = document.querySelector("#hide-button");
+function itzkvrtTheme() {
+  const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button, .theme-button');
+  const sillyImages = document.querySelectorAll('.silly-image');
+  const header = document.querySelector("h1");
+  const messageDevContainer = document.querySelector(".message-devs-container");
+  const themeButton = document.querySelector("#theme-button");
+  const newTabButton = document.querySelector("#new-tab-link");
+  const hideButton = document.querySelector("#hide-button");
 
-      if (themeActive) {
-        allTextElements.forEach((element) => {
-          element.style.color = 'white';
-          element.style.textShadow = 'none';
-        });
+  if (themeActive) {
+    allTextElements.forEach((element) => {
+      element.style.color = 'white';
+      element.style.textShadow = 'none';
+    });
 
-        sillyImages.forEach((image) => {
-          image.style.border = '2px solid #333';
-        });
+    sillyImages.forEach((image) => {
+      image.style.border = '2px solid red';
+    });
 
-        if (header) {
-          header.style.borderBottom = '2px solid red'; // Set red border when theme is active
-        }
-
-        if (messageDevContainer) {
-          messageDevContainer.style.border = '2px solid red';
-        }
-
-        if (themeButton) {
-          themeButton.style.border = '2px solid red';
-        }
-
-        if (newTabButton) {
-          newTabButton.style.border = '2px solid red';
-        }
-
-        if (hideButton) {
-          hideButton.style.border = '2px solid red';
-        }
-
-      } else {
-        allTextElements.forEach((element) => {
-          element.style.color = 'red';
-          element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
-        });
-
-        sillyImages.forEach((image) => {
-          image.style.border = '2px solid red';
-        });
-
-        if (header) {
-          header.style.borderBottom = '2px solid rgba(67, 70, 75, 1)'; // Set default border color when theme is inactive
-        }
-
-        if (messageDevContainer) {
-          messageDevContainer.style.border = '2px solid rgba(67, 70, 75, 1)';
-        }
-
-        if (themeButton) {
-          themeButton.style.border = '2px solid rgba(67, 70, 75, 1)';
-        }
-
-        if (newTabButton) {
-          newTabButton.style.border = '2px solid rgba(67, 70, 75, 1)';
-        }
-
-        if (hideButton) {
-          hideButton.style.border = '2px solid rgba(67, 70, 75, 1)';
-        }
-      }
-
-      themeActive = !themeActive;
+    if (header) {
+      header.style.borderBottom = '2px solid red'; 
     }
 
-    const themeButton = document.getElementById('theme-button');
-    themeButton.addEventListener('click', itzkvrtTheme);
+    if (messageDevContainer) {
+      messageDevContainer.style.border = '2px solid red';
+    }
+
+    if (themeButton) {
+      themeButton.style.border = '2px solid red';
+    }
+
+    if (newTabButton) {
+      newTabButton.style.border = '2px solid red';
+    }
+
+    if (hideButton) {
+      hideButton.style.border = '2px solid red';
+    }
+
+  } else {
+    allTextElements.forEach((element) => {
+      element.style.color = 'red';
+      element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
+    });
+
+    sillyImages.forEach((image) => {
+      image.style.border = '2px solid rgba(67, 70, 75, 1)';
+    });
+
+    if (header) {
+      header.style.borderBottom = '2px solid rgba(67, 70, 75, 1)';
+    }
+
+    if (messageDevContainer) {
+      messageDevContainer.style.border = '2px solid rgba(67, 70, 75, 1)';
+    }
+
+    if (themeButton) {
+      themeButton.style.border = '2px solid rgba(67, 70, 75, 1)';
+    }
+
+    if (newTabButton) {
+      newTabButton.style.border = '2px solid rgba(67, 70, 75, 1)';
+    }
+
+    if (hideButton) {
+      hideButton.style.border = '2px solid rgba(67, 70, 75, 1)';
+    }
+  }
+
+  themeActive = !themeActive;
+}
+
+const themeButton = document.getElementById('theme-button');
+themeButton.addEventListener('click', itzkvrtTheme);
   });
   </script>
  </body>
