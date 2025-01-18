@@ -19,7 +19,7 @@
       }
 
       h1 {
-        font-size: 50;
+        font-size: 50px;
         font-family: OpenDyslexic;
         text-align: center;
         margin: 0;
@@ -100,9 +100,10 @@
         color: white;
         margin-top: 20px;
       }
-li {
-  color: white;
-}
+
+      li {
+        color: white;
+      }
 
       .line {
         width: 50%;
@@ -159,11 +160,12 @@ li {
       div.myInvisibleDiv {
         overflow: hidden;
         visibility: hidden;
-        height: 250px width: 95%;
+        height: 250px;
+        width: 95%;
       }
 
       summary: {
-        display: none
+        display: none;
       }
 
       summary:after {
@@ -259,113 +261,115 @@ li {
       </details>
       <div class="line"></div>
     </div>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const sillyContainer = document.getElementById("silly-container");
-    const sillyIcons = document.getElementById("silly-icons");
-    const sillyFrame = document.getElementById("silly-frame");
-    const newTabLink = document.getElementById("new-tab-link");
-    document.getElementById("silly-container").style.display = "none";
-    window.loadSilly = function(sillyPath) {
-      sillyContainer.style.display = "flex";
-      sillyIcons.style.display = "none";
-      sillyFrame.src = sillyPath;
-      newTabLink.href = sillyPath;
-    };
-    window.hideSilly = function() {
-      sillyContainer.style.display = "none";
-      sillyIcons.style.display = "flex";
-      sillyFrame.src = "";
-    };
-    document.body.style.zoom = "90%";
 
-    let themeActive = false;
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const sillyContainer = document.getElementById("silly-container");
+        const sillyIcons = document.getElementById("silly-icons");
+        const sillyFrame = document.getElementById("silly-frame");
+        const newTabLink = document.getElementById("new-tab-link");
+        document.getElementById("silly-container").style.display = "none";
 
-    function itzkvrtTheme() {
-      const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button, li');
-      const sillyImages = document.querySelectorAll('.silly-image');
-      const header = document.querySelector("h1");
-      const messageDevContainer = document.querySelector(".message-devs-container");
-      const themeButton = document.querySelector("#theme-button");
-      const newTabButton = document.querySelector("#new-tab-link");
-      const hideButton = document.querySelector("#hide-button");
-      const lines = document.querySelectorAll('.line');
+        window.loadSilly = function(sillyPath) {
+          sillyContainer.style.display = "flex";
+          sillyIcons.style.display = "none";
+          sillyFrame.src = sillyPath;
+          newTabLink.href = sillyPath;
+        };
 
-      if (!themeActive) {
-        allTextElements.forEach((element) => {
-          element.style.color = 'red';
-          element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
-        });
+        window.hideSilly = function() {
+          sillyContainer.style.display = "none";
+          sillyIcons.style.display = "flex";
+          sillyFrame.src = "";
+        };
 
-        lines.forEach((line) => {
-          line.style.borderTop = '2px solid red';
-        });
+        let themeActive = false;
 
-        sillyImages.forEach((image) => {
-          image.style.border = '2px solid red';
-        });
+        function itzkvrtTheme() {
+          const allTextElements = document.querySelectorAll('h1, h2, a, p, .message-devs-container h2, .send-button, li');
+          const sillyImages = document.querySelectorAll('.silly-image');
+          const header = document.querySelector("h1");
+          const messageDevContainer = document.querySelector(".message-devs-container");
+          const themeButton = document.querySelector("#theme-button");
+          const newTabButton = document.querySelector("#new-tab-link");
+          const hideButton = document.querySelector("#hide-button");
+          const lines = document.querySelectorAll('.line');
 
-        if (header) {
-          header.style.borderBottom = '2px solid red';
+          if (!themeActive) {
+            allTextElements.forEach((element) => {
+              element.style.color = 'red';
+              element.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
+            });
+
+            lines.forEach((line) => {
+              line.style.borderTop = '2px solid red';
+            });
+
+            sillyImages.forEach((image) => {
+              image.style.border = '2px solid red';
+            });
+
+            if (header) {
+              header.style.borderBottom = '2px solid red';
+            }
+
+            if (messageDevContainer) {
+              messageDevContainer.style.border = '2px solid red';
+            }
+
+            if (themeButton) {
+              themeButton.style.border = '2px solid red';
+            }
+
+            if (newTabButton) {
+              newTabButton.style.border = '2px solid red';
+            }
+
+            if (hideButton) {
+              hideButton.style.border = '2px solid red';
+            }
+
+          } else {
+            allTextElements.forEach((element) => {
+              element.style.color = 'white';
+              element.style.textShadow = 'none';
+            });
+
+            lines.forEach((line) => {
+              line.style.borderTop = '1px solid white';
+            });
+
+            sillyImages.forEach((image) => {
+              image.style.border = '2px solid rgba(67, 70, 75, 1)';
+            });
+
+            if (header) {
+              header.style.borderBottom = '2px solid rgba(67, 70, 75, 1)';
+            }
+
+            if (messageDevContainer) {
+              messageDevContainer.style.border = '2px solid rgba(67, 70, 75, 1)';
+            }
+
+            if (themeButton) {
+              themeButton.style.border = '2px solid rgba(67, 70, 75, 1)';
+            }
+
+            if (newTabButton) {
+              newTabButton.style.border = '2px solid rgba(67, 70, 75, 1)';
+            }
+
+            if (hideButton) {
+              hideButton.style.border = '2px solid rgba(67, 70, 75, 1)';
+            }
+          }
+
+          themeActive = !themeActive;
         }
 
-        if (messageDevContainer) {
-          messageDevContainer.style.border = '2px solid red';
-        }
-
-        if (themeButton) {
-          themeButton.style.border = '2px solid red';
-        }
-
-        if (newTabButton) {
-          newTabButton.style.border = '2px solid red';
-        }
-
-        if (hideButton) {
-          hideButton.style.border = '2px solid red';
-        }
-
-      } else {
-        allTextElements.forEach((element) => {
-          element.style.color = 'white';
-          element.style.textShadow = 'none';
-        });
-
-        lines.forEach((line) => {
-          line.style.borderTop = '1px solid white';
-        });
-
-        sillyImages.forEach((image) => {
-          image.style.border = '2px solid rgba(67, 70, 75, 1)';
-        });
-
-        if (header) {
-          header.style.borderBottom = '2px solid rgba(67, 70, 75, 1)';
-        }
-
-        if (messageDevContainer) {
-          messageDevContainer.style.border = '2px solid rgba(67, 70, 75, 1)';
-        }
-
-        if (themeButton) {
-          themeButton.style.border = '2px solid rgba(67, 70, 75, 1)';
-        }
-
-        if (newTabButton) {
-          newTabButton.style.border = '2px solid rgba(67, 70, 75, 1)';
-        }
-
-        if (hideButton) {
-          hideButton.style.border = '2px solid rgba(67, 70, 75, 1)';
-        }
-      }
-
-      themeActive = !themeActive;
-    }
-
-    const themeButton = document.getElementById('theme-button');
-    themeButton.addEventListener('click', itzkvrtTheme);
-  });
-</script>
+        const themeButton = document.getElementById('theme-button');
+        themeButton.addEventListener('click', itzkvrtTheme);
+      });
+    </script>
   </body>
 </html>
