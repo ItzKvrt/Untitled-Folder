@@ -371,22 +371,18 @@
         </div>
       </form>
 <script>
-        const favicon = document.getElementById('favicon') || document.createElement('link');
-    if (!document.getElementById('favicon')) {
-      favicon.id = 'favicon';
-      document.head.appendChild(favicon);
-      favicon.rel = 'icon';
-    }
-    favicon.href = favicon.href || 'favicon.ico';
+  
+const favicon = document.getElementById('favicon');
+favicon.href = favicon.href || 'favicon.ico';
 
-    document.getElementById('toggleButton').addEventListener('click', function() {
-      if (favicon.href.includes('favicon.ico')) {
-        favicon.href = 'favicon2.ico';
-      } else {
-        favicon.href = 'favicon.ico';
-      }
-      document.title = (document.title === "New Tab") ? "Original Title" : "New Tab";
-    });
+document.getElementById('toggleText').addEventListener('click', function() {
+  if (favicon.href.includes('favicon.ico')) {
+    favicon.href = 'favicon2.ico';
+  } else {
+    favicon.href = 'favicon.ico';
+  }
+  document.title = (document.title === "New Tab") ? "Original Title" : "New Tab";
+});
     
   document.addEventListener("DOMContentLoaded", function () {
     const warningMessage = document.getElementById("warning-message");
