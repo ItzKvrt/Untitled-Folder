@@ -432,32 +432,40 @@ document.getElementById('toggleText').addEventListener('click', function() {
 
     window.loadSilly = function (sillyPath) {
     console.log("Loading: " + sillyPath);
+    
     const sillyContainer = document.getElementById("silly-container");
     const sillyIcons = document.getElementById("silly-icons");
     const sillyFrame = document.getElementById("silly-frame");
     const newTabLink = document.getElementById("new-tab-link");
+    const links = document.querySelectorAll('.loadpage');
 
-    document.addEventListener("DOMContentLoaded", function () {
-    link.addEventListener('click', function(event) {
-    event.preventDefault();
-    sillyContainer.style.display = "none";
-
-    if (!sillyContainer || !sillyIcons || !sillyFrame || !newTabLink) {
+    if (!sillyContainer || !sillyIcons || !sillyFrame || !newTabLink || links.length === 0) {
         console.error("One or more elements are missing.");
         return;
     }
 
-    sillyContainer.style.display = "flex";
-    sillyIcons.style.display = "none";
-    sillyFrame.src = sillyPath;
-    newTabLink.href = sillyPath;
-};
+    sillyContainer.style.display = "none";
+    sillyIcons.style.display = "flex";
+    
+    links.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            sillyContainer.style.display = "flex";
+            sillyIcons.style.display = "none";
+
+            sillyFrame.src = sillyPath;
+            newTabLink.href = sillyPath;
+
+            console.log("Loading: " + sillyPath);
+        });
+    });
 
     window.hideSilly = function () {
-      sillyContainer.style.display = "none";
-      sillyIcons.style.display = "flex";
-      sillyFrame.src = "";
+        sillyContainer.style.display = "none";
+        sillyIcons.style.display = "flex";
+        sillyFrame.src = "";
     };
+};
 
     const messageForm = document.getElementById("message-form");
     const sendButton = document.querySelector(".send-button");
