@@ -430,17 +430,17 @@ document.getElementById('toggleText').addEventListener('click', function() {
     document.title = (document.title === "New Tab") ? "Untitled Folder" : "New Tab";
 });
 
-  document.addEventListener("DOMContentLoaded", function () {
-    link.addEventListener('click', function(event) {
-    event.preventDefault();
-    sillyContainer.style.display = "none";
-
     window.loadSilly = function (sillyPath) {
     console.log("Loading: " + sillyPath);
     const sillyContainer = document.getElementById("silly-container");
     const sillyIcons = document.getElementById("silly-icons");
     const sillyFrame = document.getElementById("silly-frame");
     const newTabLink = document.getElementById("new-tab-link");
+
+    document.addEventListener("DOMContentLoaded", function () {
+    link.addEventListener('click', function(event) {
+    event.preventDefault();
+    sillyContainer.style.display = "none";
 
     if (!sillyContainer || !sillyIcons || !sillyFrame || !newTabLink) {
         console.error("One or more elements are missing.");
