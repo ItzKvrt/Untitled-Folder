@@ -315,6 +315,17 @@
       <h1>Untitled Folder</h1>
     </a>
     <div class="silly-selection" id="silly-icons">
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".silly-selection a").forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const sillyPath = this.getAttribute("href");
+            loadSilly(sillyPath);
+        });
+    });
+});
+</script>
       <a href="#" onclick="loadSilly('silly1.html')">
         <img src="silly1.png" alt="Silly 1" class="silly-image">
       </a>
