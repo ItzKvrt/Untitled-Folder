@@ -430,9 +430,19 @@ document.getElementById('toggleText').addEventListener('click', function() {
     document.title = (document.title === "New Tab") ? "Untitled Folder" : "New Tab";
 });
 
-    window.loadSilly = function (sillyPath) {
+    window.hideSilly = function () {
+    const sillyContainer = document.getElementById("silly-container");
+    const sillyIcons = document.getElementById("silly-icons");
+    const sillyFrame = document.getElementById("silly-frame");
+    sillyContainer.style.display = "none";
+    sillyIcons.style.display = "flex";
+    sillyFrame.src = "";
+};
+
+window.loadSilly = function (sillyPath) {
     console.log("Loading: " + sillyPath);
-    
+  
+}
     const sillyContainer = document.getElementById("silly-container");
     const sillyIcons = document.getElementById("silly-icons");
     const sillyFrame = document.getElementById("silly-frame");
@@ -443,10 +453,9 @@ document.getElementById('toggleText').addEventListener('click', function() {
         console.error("One or more elements are missing.");
         return;
     }
-
     sillyContainer.style.display = "none";
     sillyIcons.style.display = "flex";
-    
+
     links.forEach(link => {
         link.addEventListener('click', function (event) {
             event.preventDefault();
@@ -459,14 +468,7 @@ document.getElementById('toggleText').addEventListener('click', function() {
             console.log("Loading: " + sillyPath);
         });
     });
-
-    window.hideSilly = function () {
-        sillyContainer.style.display = "none";
-        sillyIcons.style.display = "flex";
-        sillyFrame.src = "";
-    };
 };
-
     const messageForm = document.getElementById("message-form");
     const sendButton = document.querySelector(".send-button");
     const cooldownMessage = document.createElement("p");
