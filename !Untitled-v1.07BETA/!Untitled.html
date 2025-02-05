@@ -407,7 +407,47 @@
     });
   });
 
-  async function fetchDevData() {
+  window.loadSilly = function (sillyPath) {
+    console.log("Loading: " + sillyPath);
+
+    const sillyContainer = document.getElementById("silly-container");
+    const sillyIcons = document.getElementById("silly-icons");
+    const sillyFrame = document.getElementById("silly-frame");
+    const newTabLink = document.getElementById("new-tab-link");
+    const links = document.querySelectorAll('.loadpage');
+
+    if (!sillyContainer || !sillyIcons || !sillyFrame || !newTabLink || links.length === 0) {
+      console.error("One or more elements are missing.");
+      return;
+    }
+    sillyContainer.style.display = "none";
+    sillyIcons.style.display = "flex";
+
+    links.forEach(link => {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        sillyContainer.style.display = "flex";
+        sillyIcons.style.display = "none";
+
+        sillyFrame.src = sillyPath;
+        newTabLink.href = sillyPath;
+
+        console.log("Loading: " + sillyPath);
+      });
+    });
+  };
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".silly-selection a").forEach(link => {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        const sillyPath = this.getAttribute("href");
+        loadSilly(sillyPath);
+      });
+    });
+  });
+
+ async function fetchDevData() {
     try {
       const response = await fetch('https://api.ipify.org?format=json');
       const data = await response.json();
@@ -437,37 +477,6 @@ document.getElementById('toggleText').addEventListener('click', function() {
     sillyContainer.style.display = "none";
     sillyIcons.style.display = "flex";
     sillyFrame.src = "";
-};
-
-window.loadSilly = function (sillyPath) {
-    console.log("Loading: " + sillyPath);
-  
-
-    const sillyContainer = document.getElementById("silly-container");
-    const sillyIcons = document.getElementById("silly-icons");
-    const sillyFrame = document.getElementById("silly-frame");
-    const newTabLink = document.getElementById("new-tab-link");
-    const links = document.querySelectorAll('.loadpage');
-
-    if (!sillyContainer || !sillyIcons || !sillyFrame || !newTabLink || links.length === 0) {
-        console.error("One or more elements are missing.");
-        return;
-    }
-    sillyContainer.style.display = "none";
-    sillyIcons.style.display = "flex";
-
-    links.forEach(link => {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-            sillyContainer.style.display = "flex";
-            sillyIcons.style.display = "none";
-
-            sillyFrame.src = sillyPath;
-            newTabLink.href = sillyPath;
-
-            console.log("Loading: " + sillyPath);
-        });
-    });
 };
     const messageForm = document.getElementById("message-form");
     const sendButton = document.querySelector(".send-button");
