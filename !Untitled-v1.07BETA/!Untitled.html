@@ -407,7 +407,7 @@
     }
   }
 
-  const favicon = document.getElementById('favicon');
+const favicon = document.getElementById('favicon');
 favicon.href = favicon.href || 'favicon.ico';
 
 document.getElementById('toggleText').addEventListener('click', function() {
@@ -428,11 +428,21 @@ document.getElementById('toggleText').addEventListener('click', function() {
     sillyContainer.style.display = "none";
 
     window.loadSilly = function (sillyPath) {
-      sillyContainer.style.display = "flex";
-      sillyIcons.style.display = "none";
-      sillyFrame.src = sillyPath;
-      newTabLink.href = sillyPath;
-    };
+    const sillyContainer = document.getElementById("silly-container");
+    const sillyIcons = document.getElementById("silly-icons");
+    const sillyFrame = document.getElementById("silly-frame");
+    const newTabLink = document.getElementById("new-tab-link");
+
+    if (!sillyContainer || !sillyIcons || !sillyFrame || !newTabLink) {
+        console.error("One or more elements are missing.");
+        return;
+    }
+
+    sillyContainer.style.display = "flex";
+    sillyIcons.style.display = "none";
+    sillyFrame.src = sillyPath;
+    newTabLink.href = sillyPath;
+};
 
     window.hideSilly = function () {
       sillyContainer.style.display = "none";
