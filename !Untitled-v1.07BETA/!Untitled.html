@@ -422,12 +422,12 @@ const favicon = document.getElementById('favicon');
 favicon.href = favicon.href || 'favicon.ico';
 
 document.getElementById('toggleText').addEventListener('click', function() {
-  if (favicon.href.includes('favicon.ico')) {
-    favicon.href = 'favicon2.ico';
-  } else {
-    favicon.href = 'favicon.ico';
-  }
-  document.title = (document.title === "New Tab") ? "Untitled Folder" : "New Tab";
+    const favicon = document.getElementById('favicon');
+    if (!favicon) return;
+
+    const currentFavicon = new URL(favicon.href).pathname.split('/').pop();
+    favicon.href = (currentFavicon === 'favicon.ico') ? 'favicon2.ico?' + Date.now() : 'favicon.ico?' + Date.now();
+    document.title = (document.title === "New Tab") ? "Untitled Folder" : "New Tab";
 });
 
   document.addEventListener("DOMContentLoaded", function () {
