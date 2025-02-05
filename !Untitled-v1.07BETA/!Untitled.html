@@ -407,7 +407,7 @@
     });
   });
 
-  window.loadSilly = function (sillyPath) {
+window.loadSilly = function (sillyPath) {
     console.log("Loading: " + sillyPath);
 
     const sillyContainer = document.getElementById("silly-container");
@@ -417,35 +417,42 @@
     const links = document.querySelectorAll('.loadpage');
 
     if (!sillyContainer || !sillyIcons || !sillyFrame || !newTabLink || links.length === 0) {
-      console.error("One or more elements are missing.");
-      return;
+        console.error("One or more elements are missing.");
+        return;
     }
     sillyContainer.style.display = "none";
     sillyIcons.style.display = "flex";
 
     links.forEach(link => {
-      link.addEventListener('click', function (event) {
-        event.preventDefault();
-        sillyContainer.style.display = "flex";
-        sillyIcons.style.display = "none";
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            const href = link.getAttribute("href");
+            if (href) {
+                sillyContainer.style.display = "flex";
+                sillyIcons.style.display = "none";
 
-        sillyFrame.src = sillyPath;
-        newTabLink.href = sillyPath;
+                sillyFrame.src = href;
+                newTabLink.href = href;
 
-        console.log("Loading: " + sillyPath);
-      });
+                console.log("Loading: " + href);
+            } else {
+                console.error("sillyPath is empty or undefined.");
+            }
+        });
     });
-  };
+};
 
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".silly-selection a").forEach(link => {
-      link.addEventListener("click", function (event) {
-        event.preventDefault();
-        const sillyPath = this.getAttribute("href");
-        loadSilly(sillyPath);
-      });
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".loadpage").forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const sillyPath = this.getAttribute("href");
+            console.log("Link clicked with href: " + sillyPath);
+            loadSilly(sillyPath);
+        });
     });
-  });
+});
+
 
  async function fetchDevData() {
     try {
